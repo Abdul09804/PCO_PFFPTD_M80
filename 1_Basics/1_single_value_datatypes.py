@@ -81,3 +81,34 @@ print(y)        # 0j
 print(type(y))  # <class 'complex'>
 print(bool(y))  # False
 
+##############################################################################
+
+# 4) Boolean(bool)
+"""
+-> It has only 2 values, True and False
+-> False is the default value whereas True is the non-default value
+-> We make use of boolean in 2 cases, 
+    1) To assign as a value to any variable
+    2) As a resultant to check the condition
+"""
+
+a = True
+b = False
+
+print(a)
+print(type(a))  # <class 'bool'>
+
+print(b)    # False
+print(type(b))  # <class 'bool'>
+
+print(4 > 3)    # True
+
+print(6 == 9)   # False
+
+"""
+bool    int     float       complex
+False    0       0.0          0j
+True     1       1.0         1+0j
+"""
+print(int(True))
+print(complex(True))
