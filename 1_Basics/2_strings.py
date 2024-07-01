@@ -132,4 +132,16 @@ print(st[-3])     # e
 """
 
 st = 'mississippi'
+"""
+-11	-10	-9	-8	-7	-6	-5	-4	-3	-2	-1
+m	i	s	s	i	s	s	i	p	p	i
+0	1	2	3	4	5	6	7	8	9	10
+"""
+st1 = 'pepsi'
+
+print(st[2])
+
+print(id(st[2]))        # 140722741549808
+
+print(id(st1[-2]))      # 140722741549808
 
