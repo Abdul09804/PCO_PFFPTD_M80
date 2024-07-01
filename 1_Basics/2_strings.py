@@ -79,5 +79,57 @@ good morning
 have a good day
 """
 
+###############################################################################
 
+# Memory Allocation of Sequential Datatype
+"""
+-> When the value is of sequential datatype, a layer of memory will be created
+   which gets divided into number of blocks which is equal to length of the 
+   collection.
+-> Each value in the collection will be stored in individual blocks
+-> Once after storing all the values an address will be given which gets stored
+   wrt variable name in variable space
+"""
+
+# Indexing
+"""
+-> The process of accessing individual values from the collection is called
+   indexing.
+-> Positive Indexing - Here the subaddress is given from left to right of 
+                       the collection.
+                     - Positive indexing ranges from 0 to len(coll)-1
+-> Negative Indexing - Here the sub address is given from right to left of 
+                       the collection.
+                     - Negative indexing ranges from -1 to -len(coll)
+-> Even if we use negative indexing to fetch the values, internally it will
+   consider it as positive indexing and get the value
+-> To get individual values from the collection, we make use of the syntax,
+            Var[index_no]
+-> To modify the values, we make use of the syntax,
+            Var[index_no] = new_value
+"""
+
+st = 'Hai Steve'
+"""
+-9	-8	-7	-6	-5	-4	-3	-2	-1
+ H	 a	 i		 S	 t	 e	 v	 e
+ 0	 1	 2 	 3	 4	 5	 6	 7	 8
+
+"""
+print(len(st))
+
+print(st[5])      # t
+print(st[-3])     # e
+
+# string modification
+
+# st[4] = 's'
+"""
+-> We will not be able to modify the values of a string as it is a immutable 
+   collection
+-> A collection which does not allow the user to modify its values is called 
+   immutable collection
+"""
+
+st = 'mississippi'
 
