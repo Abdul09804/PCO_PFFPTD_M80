@@ -155,3 +155,46 @@ st = 'The Stories Of Mahabharata'
 print(st.istitle())     # True
 
 ############################################################################
+
+# 12) startswith
+"""
+-> It is used to check whether a string is starting with a specified substring
+-> Syntax:
+        Var.startswith(substring)
+-> The return type of startswith is boolean
+"""
+
+st = 'hello world'
+print(st.startswith('h'))   # True
+print(st.startswith('he'))  # True
+print(st.startswith('H'))   # False
+
+###############################################################################
+
+# 13) endswith
+
+##############################################################################
+
+# 14) count
+"""
+-> It is used to count the number of occurrence of a given substring
+   in a string within specified limits
+-> Syntax:
+        Var.count(substring)
+        Var.count(substring, start)
+        Var.count(substring, start, end)
+-> The return type of count is integer
+-> If the substring is not present, count will return 0
+"""
+
+st = 'mississippi'
+print(st.count('s'))    # 4
+print(st.count('s', 4))     # 2
+print(st.count('s', 3, 6))  # 2
+
+print(st.count('ssi'))      # 2
+
+print(st.count('z'))    # 0
+
+#############################################################################
+
