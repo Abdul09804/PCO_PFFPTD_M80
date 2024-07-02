@@ -60,4 +60,98 @@ print("THE STORIES".title())    # The Stories
 
 ################################################################################
 
-# 5)
+# 5) capitalize
+"""
+-> It is used to convert the first alphabet to uppercase and rest 
+   of them to lowercase
+-> Syntax:
+        Var.capitalize()
+-> The return type of capitalize is string
+"""
+book = "the stories of mahabharata"
+print(book.capitalize())    # The stories of mahabharata
+
+book = '4tune teller'
+print(book.capitalize())    # 4tune teller
+
+################################################################################
+
+# 6) isupper
+"""
+-> It is used to check whether all the alphabets present are uppercase alphabets
+-> Syntax:
+        Var.isupper()
+-> The return type of isupper is boolean
+"""
+
+st = 'HELLO'
+print(st.isupper())     # True
+
+print('HELLo'.isupper())    # False
+
+print('HELLO WORLD123@764'.isupper())  # True
+
+###############################################################################
+
+# 7) islower
+
+############################################################################
+
+# 8) isalpha
+"""
+-> It is used to check whether string has only alphabets
+-> Syntax:
+        Var.isalpha()
+-> The return type of isalpha is boolean
+"""
+
+print('helLO'.isalpha())        # True
+
+print('hai ram'.isalpha())      # False
+
+print('PYTHON'.isalpha())       # True
+
+print('python'.isalpha())       # True
+
+##############################################################################
+
+# 9) isdigit()
+"""
+-> It is used to check whether string consists of only numbers
+-> Syntax:
+        Var.isdigit()
+-> The return type of isdigit is boolean
+"""
+
+print('9845 123 536'.isdigit())     # False
+print('9876543210'.isdigit())       # True
+
+#############################################################################
+
+# 10) isalnum
+"""
+
+"""
+
+st = 'HelloWorld123'
+print(st.isalnum())  # True
+
+print('Hello World123'.isalnum())       # False
+print('hello'.isalnum())        # True
+print('HELLO'.isalnum())        # True
+print('1234'.isalnum())         # True
+
+############################################################################
+
+# 11) istitle
+"""
+-> IT is used to check whether the string is in title format
+-> Syntax:
+        Var.istitle()
+-> The return type of istitle is boolean
+"""
+
+st = 'The Stories Of Mahabharata'
+print(st.istitle())     # True
+
+############################################################################
