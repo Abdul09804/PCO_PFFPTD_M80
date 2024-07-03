@@ -198,3 +198,26 @@ print(st.count('z'))    # 0
 
 #############################################################################
 
+# 15) index
+"""
+-> It is used to get the index number of first ocurrence of first character of a
+   a given substring.
+-> Syntax:
+        Var.index(substring) 
+        Var.index(substring, SI)
+        Var.index(substring, SI, EI)
+-> The return type of index is a integer
+-> If the value is not present between the limits  control will throw 
+   ValueError
+"""
+
+st = 'mississippi'
+print(st.index('i'))    # 1
+
+print(st.index('s', 4))     # 5
+print(st.index('i', 5, 10))     # 7
+
+# print(st.index('l'))    # ValueError
+
+print(st.index('ssi'))      # 2
+
