@@ -5,6 +5,7 @@
         Var = [Val1, Val2, ............., Valn]
 -> The values are separated by comma operator
 -> Homogenous list - list which has the values that belong to same datatype
+-> The default value of list is []
 """
 
 nums = [1, 2, 3, 4, 5]
@@ -34,3 +35,24 @@ print(vals)     # [10, 'Hai', [2, 3], (8+7j)]
 li = []
 print(type(li))     # <class 'list'>
 print(bool(li))     # False
+
+
+val = [155, [1, 5, 5], '155', '[1, 5, 5]']
+print(val[2][1])    # 5
+
+val = [1, 2, [3, 4, [5, 6]]]
+print(val[0])
+print(val[1])
+print(val[2][0])
+print(val[2][1])
+print(val[2][2][0])
+print(val[2][2][1])
+
+# print(val[2])   # [3, 4, [5, 6]]
+# print(val[2][2])    # [5, 6]
+# print(val[2][2][0])     # 5
+# print(val[2][2][1])     # 6
+
+
+li = [[[[10]]]]
+print(li[0][0][0][0])   # 10
