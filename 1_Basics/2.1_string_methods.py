@@ -200,7 +200,7 @@ print(st.count('z'))    # 0
 
 # 15) index
 """
--> It is used to get the index number of first ocurrence of first character of a
+-> It is used to get the index number of first ocurrence of the character of a
    a given substring.
 -> Syntax:
         Var.index(substring) 
@@ -220,4 +220,46 @@ print(st.index('i', 5, 10))     # 7
 # print(st.index('l'))    # ValueError
 
 print(st.index('ssi'))      # 2
+
+###############################################################################
+
+# 16) rindex
+"""
+-> It is used to get the index of first occurrence of given character searching
+   from right to left of the string.
+-> Syntax:
+        Var.rindex(substring)
+        Var.rindex(substring, SI)
+        Var.rindex(substring, SI, EI)
+-> The return type of rindex is integer
+"""
+st = 'mississippi'
+print(st.rindex('i'))   # 10
+print(st.rindex('s'))   # 6
+print(st.index('s'))    # 2
+
+print(st.rindex('i', 4, 10))        # 7
+print(st.index('i', 4, 10))         # 4
+
+print(st.rindex('i', 1, 9))     # 7
+
+st = 'python program'
+"""
+-14	-13	-12	-11	-10	-9	-8	-7	-6	-5	-4	-3	-2	-1
+p	y	t	h	o	n 		p	r	o	g	r	a	m
+0	1	2	3	4	5	6	7	8	9	10	11	12	13
+"""
+print(st.rindex('o'))       # 9
+print(st.index('o'))      # 4
+
+print(st.rindex('p'))       # 7
+print(st.index('p'))        # 0
+
+print(st.rindex('p', 0, 8))     #
+# print(st.index('p', 0, 8))
+
+# 17) find
+"""
+
+"""
 
