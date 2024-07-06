@@ -260,6 +260,50 @@ print(st.rindex('p', 0, 8))     #
 
 # 17) find
 """
-
+-> It works same as index if the value is present.
+-> If the value is not present, control will throw ValueError in case index method
+   but, it will give the result as -1 if the value is not present.
+-> Syntax:
+        Var.find(substring) 
+        Var.find(substring, SI)
+        Var.find(substring, SI, EI)
+-> The return type of find s a integer
+-> If the value is not present between the limits -1 is returned
 """
+
+# st = 'hello universe'
+# print(st.find('e'))     # 1
+#
+# print(st.index('e'))    # 1
+#
+# # print(st.index('z'))    # ValueError: substring not found
+#
+# print(st.find('z'))     # -1 -> It gives -1 if the value is not present
+
+################################################################################
+
+# 18) rfind
+"""
+-> 
+"""
+
+#################################################################################
+
+# 19) replace
+"""
+-> It is used to replace a substring by a new string
+-> 
+"""
+
+st = "she sells seashells in the seashore"
+
+print(st.replace('s', 'S'))     # She SellS SeaShellS in the SeaShore
+
+print(st.replace('sea', 'Sea'))     # she sells Seashells in the Seashore
+
+print(st.replace('s', 'S', 2))  # She Sells seashells in the seashore
+
+print(st.replace(' ', '_'))     # she_sells_seashells_in_the_seashore
+
+print(st.replace('w', 'W'))     # she sells seashells in the seashore
 
