@@ -292,7 +292,10 @@ print(st.rindex('p', 0, 8))     #
 # 19) replace
 """
 -> It is used to replace a substring by a new string
--> 
+-> Syntax:
+            Var.replace(oldstring, newstring)
+            Var.replace(oldstring, newstring, no_of_replacements)
+-> The return type of replace is a string 
 """
 
 st = "she sells seashells in the seashore"
@@ -306,4 +309,41 @@ print(st.replace('s', 'S', 2))  # She Sells seashells in the seashore
 print(st.replace(' ', '_'))     # she_sells_seashells_in_the_seashore
 
 print(st.replace('w', 'W'))     # she sells seashells in the seashore
+
+
+################################################################################
+
+# 20) strip
+"""
+-> It is used to remove leading and trailing whitespaces, \n and \t characters
+-> Syntax:
+            Var.strip()
+            Var.strip(ch)       # strips leading and trailing ch
+-> The return type of strip is a string
+"""
+
+st = '              hello world             '
+print(len(st))      # 38
+
+print(st)           # '              hello world             '
+
+print(st.strip())   # hello world
+print(len(st.strip()))      # 11
+
+st = '@@@@@@@@@@@@@@hello world@@@@@@@@@@@@@@@@@@@@'
+print(st.strip())       # '@@@@@@@@@@@@@@hello world@@@@@@@@@@@@@@@@@@@@'
+
+print(st.strip('@'))        # hello world
+
+st = '@@@@@@@@@@@@@         hello world        $$$$$$$$$$$$$$$$$'
+
+print(st.strip())       # @@@@@@@@@@@@@         hello world        $$$$$$$$$$$$$$$$$
+
+print(st.strip('@'))        # '         hello world        $$$$$$$$$$$$$$$$$'
+
+print('    hello      '.strip())        # hello
+
+print(st.strip('@').strip('$'))     # '         hello world        '
+
+print(st.strip('@').strip('$').strip())     # 'hello world'
 
