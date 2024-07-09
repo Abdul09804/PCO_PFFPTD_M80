@@ -48,7 +48,7 @@
 -> The return type of extend is None
 """
 
-li = [1, 8.6, False, [1, 2]]
+# li = [1, 8.6, False, [1, 2]]
 # print(li.extend(7))     # TypeError
 
 # print(li.extend('abc'))     # None
@@ -60,5 +60,33 @@ li = [1, 8.6, False, [1, 2]]
 # li.append([10, 20, 30])
 # print(li)   # [1, 8.6, False, [1, 2], [10, 20, 30]]
 
+# li.extend(79)   # TypeError
+
+# print(li.extend('79'))  #
+# print(li)   # [1, 8.6, False, [1, 2], '7', '9']
+
+# print(li.extend([79]))
+# print(li)       # [1, 8.6, False, [1, 2], '7', '9', 79]
+
 #################################################################################
+
+# 4) pop
+"""
+-> It is used to remove the last value from the list
+-> Syntax:
+            Var.pop()       # removes last value
+            Var.pop(index_no)   # removes value present at specified index
+-> If the index is not present, control will throw IndexError
+-> pop returns the value which has been removed       
+"""
+
+li = [1, 8.6, False, [1, 2], '7', '9', 79]
+print(li.pop())     # 79
+print(li)       # [1, 8.6, False, [1, 2], '7', '9']
+
+print(li.pop(1))        # 8.6
+print(li)       # [1, False, [1, 2], '7', '9']
+
+# print(li.pop(10))   # IndexError
+
 
