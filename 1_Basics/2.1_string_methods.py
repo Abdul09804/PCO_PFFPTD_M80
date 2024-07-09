@@ -347,3 +347,85 @@ print(st.strip('@').strip('$'))     # '         hello world        '
 
 print(st.strip('@').strip('$').strip())     # 'hello world'
 
+###############################################################################
+
+# 21) lstrip
+"""
+-> It is used to remove the leading whitespaces or \n or \t characters
+-> Syntax:
+            Var.lstrip()    
+            Var.lstrip(ch)
+-> The return type of lstrip is a string
+"""
+
+st = '              hello world             '
+print(st.lstrip())      # 'hello world             '
+
+st = '@@@@@@@@@@@@@@hello world@@@@@@@@@@@@@@@@@@@@'
+print(st.lstrip('@'))       # 'hello world@@@@@@@@@@@@@@@@@@@@'
+
+##############################################################################
+
+# 22) rstrip
+
+##############################################################################
+
+# 23) split
+"""
+-> It is used to split the string as list of strings
+-> Syntax:
+            Var.split()
+-> The return type of split is list
+"""
+
+st = 'the stories of world war 2'
+print(st.split())       # ['the', 'stories', 'of', 'world', 'war', '2']
+
+print(st.split('e'))    # ['th', ' stori', 's of world war 2']
+
+print(st.split(maxsplit=2))     # ['the', 'stories', 'of world war 2']
+
+st = 'the_stories_of_world_war_2'
+print(st.split('_'))        # ['the', 'stories', 'of', 'world', 'war', '2']
+
+print(st.split('_', maxsplit=3))    # ['the', 'stories', 'of', 'world_war_2']
+
+print(st.split('_', 3))     # ['the', 'stories', 'of', 'world_war_2']
+
+#############################################################################
+
+# 24) rsplit
+"""
+
+"""
+st = 'the stories of world war 2'
+
+print(st.split())   # ['the', 'stories', 'of', 'world', 'war', '2']
+print(st.rsplit())  # ['the', 'stories', 'of', 'world', 'war', '2']
+
+print(st.split(maxsplit=2))     # ['the', 'stories', 'of world war 2']
+print(st.rsplit(maxsplit=2))    # ['the stories of world', 'war', '2']
+
+################################################################################
+
+# 25) join
+"""
+-> It is used to join an iterable by a gluestring
+-> Syntax:
+            gluestring.join(iterable)
+-> The return type of join is a string
+"""
+
+print(' '.join(['the', 'stories', 'of', 'world', 'war', '2']))  # the stories of world war 2
+
+print(''.join(['the', 'stories', 'of', 'world', 'war', '2']))       # thestoriesofworldwar2
+
+print('@$#'.join(['the', 'stories', 'of', 'world', 'war', '2']))        # the@$#stories@$#of@$#world@$#war@$#2
+
+print(' '.join('abc'))  # a b c
+
+# print(' '.join([1, 2, 3]))  # TypeError
+
+
+
+
