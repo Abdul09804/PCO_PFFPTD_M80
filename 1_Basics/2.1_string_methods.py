@@ -9,11 +9,11 @@
 -> string methods will not modify the original strings
 """
 
-st = 'hello'
-print(st.upper())   # HELLO
-print(st)       # hello
-
-print('heLlo WOrld 123@'.upper())   # HELLO WORLD 123@
+# st = 'hello'
+# print(st.upper())   # HELLO
+# print(st)       # hello
+#
+# print('heLlo WOrld 123@'.upper())   # HELLO WORLD 123@
 
 #################################################################################
 
@@ -25,8 +25,8 @@ print('heLlo WOrld 123@'.upper())   # HELLO WORLD 123@
 -> The return type of lower is a string
 """
 
-st = 'Hello WORLd 12%^^'
-print(st.lower())   # hello world 12%^^
+# st = 'Hello WORLd 12%^^'
+# print(st.lower())   # hello world 12%^^
 
 ##################################################################################
 
@@ -37,8 +37,8 @@ print(st.lower())   # hello world 12%^^
         Var.swapcase()
 -> The return type of swapcase is string
 """
-st = 'Hello WORLd 12%^^'
-print(st.swapcase())    # hELLO worlD 12%^^
+# st = 'Hello WORLd 12%^^'
+# print(st.swapcase())    # hELLO worlD 12%^^
 
 ##################################################################################
 
@@ -50,13 +50,13 @@ print(st.swapcase())    # hELLO worlD 12%^^
 -> The return type of title is a string
 """
 
-book = "the stories of mahabharata"
-print(book.title())     # The Stories Of Mahabharata
-
-book = "4small sToRies"
-print(book.title())     # 4Small Stories
-
-print("THE STORIES".title())    # The Stories
+# book = "the stories of mahabharata"
+# print(book.title())     # The Stories Of Mahabharata
+#
+# book = "4small sToRies"
+# print(book.title())     # 4Small Stories
+#
+# print("THE STORIES".title())    # The Stories
 
 ################################################################################
 
@@ -68,11 +68,11 @@ print("THE STORIES".title())    # The Stories
         Var.capitalize()
 -> The return type of capitalize is string
 """
-book = "the stories of mahabharata"
-print(book.capitalize())    # The stories of mahabharata
-
-book = '4tune teller'
-print(book.capitalize())    # 4tune teller
+# book = "the stories of mahabharata"
+# print(book.capitalize())    # The stories of mahabharata
+#
+# book = '4tune teller'
+# print(book.capitalize())    # 4tune teller
 
 ################################################################################
 
@@ -84,12 +84,12 @@ print(book.capitalize())    # 4tune teller
 -> The return type of isupper is boolean
 """
 
-st = 'HELLO'
-print(st.isupper())     # True
-
-print('HELLo'.isupper())    # False
-
-print('HELLO WORLD123@764'.isupper())  # True
+# st = 'HELLO'
+# print(st.isupper())     # True
+#
+# print('HELLo'.isupper())    # False
+#
+# print('HELLO WORLD123@764'.isupper())  # True
 
 ###############################################################################
 
@@ -105,13 +105,13 @@ print('HELLO WORLD123@764'.isupper())  # True
 -> The return type of isalpha is boolean
 """
 
-print('helLO'.isalpha())        # True
-
-print('hai ram'.isalpha())      # False
-
-print('PYTHON'.isalpha())       # True
-
-print('python'.isalpha())       # True
+# print('helLO'.isalpha())        # True
+#
+# print('hai ram'.isalpha())      # False
+#
+# print('PYTHON'.isalpha())       # True
+#
+# print('python'.isalpha())       # True
 
 ##############################################################################
 
@@ -123,8 +123,8 @@ print('python'.isalpha())       # True
 -> The return type of isdigit is boolean
 """
 
-print('9845 123 536'.isdigit())     # False
-print('9876543210'.isdigit())       # True
+# print('9845 123 536'.isdigit())     # False
+# print('9876543210'.isdigit())       # True
 
 #############################################################################
 
@@ -133,13 +133,13 @@ print('9876543210'.isdigit())       # True
 
 """
 
-st = 'HelloWorld123'
-print(st.isalnum())  # True
-
-print('Hello World123'.isalnum())       # False
-print('hello'.isalnum())        # True
-print('HELLO'.isalnum())        # True
-print('1234'.isalnum())         # True
+# st = 'HelloWorld123'
+# print(st.isalnum())  # True
+#
+# print('Hello World123'.isalnum())       # False
+# print('hello'.isalnum())        # True
+# print('HELLO'.isalnum())        # True
+# print('1234'.isalnum())         # True
 
 ############################################################################
 
@@ -151,8 +151,8 @@ print('1234'.isalnum())         # True
 -> The return type of istitle is boolean
 """
 
-st = 'The Stories Of Mahabharata'
-print(st.istitle())     # True
+# st = 'The Stories Of Mahabharata'
+# print(st.istitle())     # True
 
 ############################################################################
 
@@ -164,10 +164,10 @@ print(st.istitle())     # True
 -> The return type of startswith is boolean
 """
 
-st = 'hello world'
-print(st.startswith('h'))   # True
-print(st.startswith('he'))  # True
-print(st.startswith('H'))   # False
+# st = 'hello world'
+# print(st.startswith('h'))   # True
+# print(st.startswith('he'))  # True
+# print(st.startswith('H'))   # False
 
 ###############################################################################
 
@@ -187,14 +187,14 @@ print(st.startswith('H'))   # False
 -> If the substring is not present, count will return 0
 """
 
-st = 'mississippi'
-print(st.count('s'))    # 4
-print(st.count('s', 4))     # 2
-print(st.count('s', 3, 6))  # 2
-
-print(st.count('ssi'))      # 2
-
-print(st.count('z'))    # 0
+# st = 'mississippi'
+# print(st.count('s'))    # 4
+# print(st.count('s', 4))     # 2
+# print(st.count('s', 3, 6))  # 2
+#
+# print(st.count('ssi'))      # 2
+#
+# print(st.count('z'))    # 0
 
 #############################################################################
 
@@ -211,15 +211,15 @@ print(st.count('z'))    # 0
    ValueError
 """
 
-st = 'mississippi'
-print(st.index('i'))    # 1
-
-print(st.index('s', 4))     # 5
-print(st.index('i', 5, 10))     # 7
-
-# print(st.index('l'))    # ValueError
-
-print(st.index('ssi'))      # 2
+# st = 'mississippi'
+# print(st.index('i'))    # 1
+#
+# print(st.index('s', 4))     # 5
+# print(st.index('i', 5, 10))     # 7
+#
+# # print(st.index('l'))    # ValueError
+#
+# print(st.index('ssi'))      # 2
 
 ###############################################################################
 
@@ -233,15 +233,15 @@ print(st.index('ssi'))      # 2
         Var.rindex(substring, SI, EI)
 -> The return type of rindex is integer
 """
-st = 'mississippi'
-print(st.rindex('i'))   # 10
-print(st.rindex('s'))   # 6
-print(st.index('s'))    # 2
-
-print(st.rindex('i', 4, 10))        # 7
-print(st.index('i', 4, 10))         # 4
-
-print(st.rindex('i', 1, 9))     # 7
+# st = 'mississippi'
+# print(st.rindex('i'))   # 10
+# print(st.rindex('s'))   # 6
+# print(st.index('s'))    # 2
+#
+# print(st.rindex('i', 4, 10))        # 7
+# print(st.index('i', 4, 10))         # 4
+#
+# print(st.rindex('i', 1, 9))     # 7
 
 st = 'python program'
 """
@@ -249,13 +249,13 @@ st = 'python program'
 p	y	t	h	o	n 		p	r	o	g	r	a	m
 0	1	2	3	4	5	6	7	8	9	10	11	12	13
 """
-print(st.rindex('o'))       # 9
-print(st.index('o'))      # 4
-
-print(st.rindex('p'))       # 7
-print(st.index('p'))        # 0
-
-print(st.rindex('p', 0, 8))     #
+# print(st.rindex('o'))       # 9
+# print(st.index('o'))      # 4
+#
+# print(st.rindex('p'))       # 7
+# print(st.index('p'))        # 0
+#
+# print(st.rindex('p', 0, 8))     #
 # print(st.index('p', 0, 8))
 
 # 17) find
@@ -298,17 +298,17 @@ print(st.rindex('p', 0, 8))     #
 -> The return type of replace is a string 
 """
 
-st = "she sells seashells in the seashore"
-
-print(st.replace('s', 'S'))     # She SellS SeaShellS in the SeaShore
-
-print(st.replace('sea', 'Sea'))     # she sells Seashells in the Seashore
-
-print(st.replace('s', 'S', 2))  # She Sells seashells in the seashore
-
-print(st.replace(' ', '_'))     # she_sells_seashells_in_the_seashore
-
-print(st.replace('w', 'W'))     # she sells seashells in the seashore
+# st = "she sells seashells in the seashore"
+#
+# print(st.replace('s', 'S'))     # She SellS SeaShellS in the SeaShore
+#
+# print(st.replace('sea', 'Sea'))     # she sells Seashells in the Seashore
+#
+# print(st.replace('s', 'S', 2))  # She Sells seashells in the seashore
+#
+# print(st.replace(' ', '_'))     # she_sells_seashells_in_the_seashore
+#
+# print(st.replace('w', 'W'))     # she sells seashells in the seashore
 
 
 ################################################################################
@@ -322,30 +322,30 @@ print(st.replace('w', 'W'))     # she sells seashells in the seashore
 -> The return type of strip is a string
 """
 
-st = '              hello world             '
-print(len(st))      # 38
-
-print(st)           # '              hello world             '
-
-print(st.strip())   # hello world
-print(len(st.strip()))      # 11
-
-st = '@@@@@@@@@@@@@@hello world@@@@@@@@@@@@@@@@@@@@'
-print(st.strip())       # '@@@@@@@@@@@@@@hello world@@@@@@@@@@@@@@@@@@@@'
-
-print(st.strip('@'))        # hello world
-
-st = '@@@@@@@@@@@@@         hello world        $$$$$$$$$$$$$$$$$'
-
-print(st.strip())       # @@@@@@@@@@@@@         hello world        $$$$$$$$$$$$$$$$$
-
-print(st.strip('@'))        # '         hello world        $$$$$$$$$$$$$$$$$'
-
-print('    hello      '.strip())        # hello
-
-print(st.strip('@').strip('$'))     # '         hello world        '
-
-print(st.strip('@').strip('$').strip())     # 'hello world'
+# st = '              hello world             '
+# print(len(st))      # 38
+#
+# print(st)           # '              hello world             '
+#
+# print(st.strip())   # hello world
+# print(len(st.strip()))      # 11
+#
+# st = '@@@@@@@@@@@@@@hello world@@@@@@@@@@@@@@@@@@@@'
+# print(st.strip())       # '@@@@@@@@@@@@@@hello world@@@@@@@@@@@@@@@@@@@@'
+#
+# print(st.strip('@'))        # hello world
+#
+# st = '@@@@@@@@@@@@@         hello world        $$$$$$$$$$$$$$$$$'
+#
+# print(st.strip())       # @@@@@@@@@@@@@         hello world        $$$$$$$$$$$$$$$$$
+#
+# print(st.strip('@'))        # '         hello world        $$$$$$$$$$$$$$$$$'
+#
+# print('    hello      '.strip())        # hello
+#
+# print(st.strip('@').strip('$'))     # '         hello world        '
+#
+# print(st.strip('@').strip('$').strip())     # 'hello world'
 
 ###############################################################################
 
@@ -358,11 +358,11 @@ print(st.strip('@').strip('$').strip())     # 'hello world'
 -> The return type of lstrip is a string
 """
 
-st = '              hello world             '
-print(st.lstrip())      # 'hello world             '
-
-st = '@@@@@@@@@@@@@@hello world@@@@@@@@@@@@@@@@@@@@'
-print(st.lstrip('@'))       # 'hello world@@@@@@@@@@@@@@@@@@@@'
+# st = '              hello world             '
+# print(st.lstrip())      # 'hello world             '
+#
+# st = '@@@@@@@@@@@@@@hello world@@@@@@@@@@@@@@@@@@@@'
+# print(st.lstrip('@'))       # 'hello world@@@@@@@@@@@@@@@@@@@@'
 
 ##############################################################################
 
@@ -378,19 +378,19 @@ print(st.lstrip('@'))       # 'hello world@@@@@@@@@@@@@@@@@@@@'
 -> The return type of split is list
 """
 
-st = 'the stories of world war 2'
-print(st.split())       # ['the', 'stories', 'of', 'world', 'war', '2']
+# st = 'the stories of world war 2'
+# print(st.split())       # ['the', 'stories', 'of', 'world', 'war', '2']
 
-print(st.split('e'))    # ['th', ' stori', 's of world war 2']
-
-print(st.split(maxsplit=2))     # ['the', 'stories', 'of world war 2']
-
-st = 'the_stories_of_world_war_2'
-print(st.split('_'))        # ['the', 'stories', 'of', 'world', 'war', '2']
-
-print(st.split('_', maxsplit=3))    # ['the', 'stories', 'of', 'world_war_2']
-
-print(st.split('_', 3))     # ['the', 'stories', 'of', 'world_war_2']
+# print(st.split('e'))    # ['th', ' stori', 's of world war 2']
+#
+# print(st.split(maxsplit=2))     # ['the', 'stories', 'of world war 2']
+#
+# st = 'the_stories_of_world_war_2'
+# print(st.split('_'))        # ['the', 'stories', 'of', 'world', 'war', '2']
+#
+# print(st.split('_', maxsplit=3))    # ['the', 'stories', 'of', 'world_war_2']
+#
+# print(st.split('_', 3))     # ['the', 'stories', 'of', 'world_war_2']
 
 #############################################################################
 
@@ -400,11 +400,11 @@ print(st.split('_', 3))     # ['the', 'stories', 'of', 'world_war_2']
 """
 st = 'the stories of world war 2'
 
-print(st.split())   # ['the', 'stories', 'of', 'world', 'war', '2']
-print(st.rsplit())  # ['the', 'stories', 'of', 'world', 'war', '2']
-
-print(st.split(maxsplit=2))     # ['the', 'stories', 'of world war 2']
-print(st.rsplit(maxsplit=2))    # ['the stories of world', 'war', '2']
+# print(st.split())   # ['the', 'stories', 'of', 'world', 'war', '2']
+# print(st.rsplit())  # ['the', 'stories', 'of', 'world', 'war', '2']
+#
+# print(st.split(maxsplit=2))     # ['the', 'stories', 'of world war 2']
+# print(st.rsplit(maxsplit=2))    # ['the stories of world', 'war', '2']
 
 ################################################################################
 
@@ -416,16 +416,124 @@ print(st.rsplit(maxsplit=2))    # ['the stories of world', 'war', '2']
 -> The return type of join is a string
 """
 
-print(' '.join(['the', 'stories', 'of', 'world', 'war', '2']))  # the stories of world war 2
-
-print(''.join(['the', 'stories', 'of', 'world', 'war', '2']))       # thestoriesofworldwar2
-
-print('@$#'.join(['the', 'stories', 'of', 'world', 'war', '2']))        # the@$#stories@$#of@$#world@$#war@$#2
-
-print(' '.join('abc'))  # a b c
+# print(' '.join(['the', 'stories', 'of', 'world', 'war', '2']))  # the stories of world war 2
+#
+# print(''.join(['the', 'stories', 'of', 'world', 'war', '2']))       # thestoriesofworldwar2
+#
+# print('@$#'.join(['the', 'stories', 'of', 'world', 'war', '2']))        # the@$#stories@$#of@$#world@$#war@$#2
+#
+# print(' '.join('abc'))  # a b c
 
 # print(' '.join([1, 2, 3]))  # TypeError
 
+################################################################################
+
+# 26) format
+"""
+-> {} - are called place holders, which are used to get the values during formatting/ 
+        during the run time
+-> 
+"""
+
+emp1 = """My name is John
+I am from Bengaluru
+I work as a Developer"""
+
+emp2 = """My name is Mary
+I am from Hyderabad
+I work as a Test Engineer"""
+
+employee = """My name is {}
+I am from {}
+I work as a {}"""
+
+# print(employee.format("Joseph", "Mysuru", "Junior Engineer"))
+"""
+My name is Joseph
+I am from Mysuru
+I work as a Junior Engineer
+"""
+
+# print(employee)
+"""
+My name is {}
+I am from {}
+I work as a {}
+"""
 
 
+employee = """My name is {0}
+I am from {1}
+I work as a {2}"""
 
+# print(employee.format("Bhavana", "Bengaluru", "Assistant Engineer"))
+"""
+My name is Bhavana
+I am from Bengaluru
+I work as a Assistant Engineer
+"""
+
+# print(employee.format("Bengaluru", "Assistant Engineer", "Bhavana"))
+"""
+My name is Bengaluru
+I am from Assistant Engineer
+I work as a Bhavana
+"""
+
+employee = """My name is {2}
+I am from {0}
+I work as a {1}"""
+
+# print(employee.format("Bengaluru", "Assistant Engineer", "Bhavana"))
+"""
+My name is Bhavana
+I am from Bengaluru
+I work as a Assistant Engineer
+"""
+
+employee = """My name is {name}
+I am from {place}
+I work as a {designation}"""
+
+# print(employee.format("Bhavana", "Bengaluru", "Assistant Engineer"))        # KeyError
+
+# print(employee.format(name="Bhavana", place="Bengaluru", designation="Assistant Engineer"))
+"""
+My name is Bhavana
+I am from Bengaluru
+I work as a Assistant Engineer
+"""
+
+# print(employee.format(place="Bengaluru", name="Bhavana", designation="Assistant Engineer"))
+"""
+My name is Bhavana
+I am from Bengaluru
+I work as a Assistant Engineer
+"""
+
+
+# name = "Bhavana"
+# place = "Mysuru"
+# designation = "Assistant Engineer"
+#
+# employee = f"""My name is {name}
+# I am from {place}
+# I work as a {designation}"""
+#
+# print(employee)
+"""
+My name is Bhavana
+I am from Mysuru
+I work as a Assistant Engineer
+"""
+
+
+name = input('Enter the name: ')
+place = input('Enter the place: ')
+designation = input('Enter the designation: ')
+
+employee = f"""My name is {name}
+I am from {place}
+I work as a {designation}"""
+
+print(employee)
