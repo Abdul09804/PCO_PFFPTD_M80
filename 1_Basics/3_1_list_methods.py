@@ -188,3 +188,11 @@ names = ['eve', 'steve', 'alex', 'bob', 'john', 'jenny']
 # print(names)        # ['steve', 'john', 'jenny', 'eve', 'bob', 'alex']
 
 
+################################################################################
+
+# 11) copy
+"""
+-> It is used to perform shallow copy operation
+-> Syntax:
+            Var.copy()
+"""
