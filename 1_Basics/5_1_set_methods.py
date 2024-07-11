@@ -116,3 +116,77 @@ s = {10, 'hai', 9.86, 9+7j}
 
 #################################################################################
 
+# 7) union
+"""
+-> It returns a set which has the values of set and an iterable
+-> Syntax:
+            Var.union(iterable)
+-> The return type of union is a set
+"""
+
+# s1 = {10, 20, 30}
+#
+# print(s1.union({40, 50, 60}))   # {50, 20, 40, 10, 60, 30}
+# print(s1.union('abc'))      # {'c', 10, 'a', 20, 'b', 30}
+# print(s1)       # {10, 20, 30}
+#
+# print(s1.union(['apple', 'google', 'yahoo']))   # {10, 'google', 'yahoo', 20, 'apple', 30}
+
+################################################################################
+
+# 8) intersection
+"""
+-> It is used to get a set of common values present in set and iterable
+-> The return type of intersection is a set
+-> Syntax:
+            Var.intersection(iterable)
+"""
+#
+# s1 = {10, 20, 30}
+# s2 = {30, 20, 87}
+# print(s1.intersection(s2))      # {20, 30}
+# print(s1)           # {10, 20, 30}
+#
+# print(s1.intersection([10, 30]))       # {10, 30}
+#
+# s1 = {'a', 'b', 'c'}
+# print(s1.intersection('hai'))   # {'a'}
+
+# s1 = {10, 20}
+# print(s1.intersection({30, 40}))    # set()
+
+################################################################################
+
+# 9) difference
+"""
+-> It is used to get the values of set1 excluding the common elements in set1 and
+   iterable
+-> Syntax:
+            Var.difference(iterable)
+-> The return type of difference is a set
+"""
+#
+s1 = {10, 20, 30}
+s2 = {30, 20, 87}
+
+print(s1.difference(s2))    # {10}
+print(s2.difference({10, 33}))  # {20, 30, 87}
+
+print(s1.difference([10]))  # {20, 30}
+
+#################################################################################
+
+# 10) difference_update
+"""
+-> It is a method which is used to update a set with value obtained from the
+   method difference
+-> Syntax:
+            Var.difference-update(iterable)
+"""
+# s1 = {10, 20, 30}
+# s2 = {30, 20, 87}
+# print(s1.difference_update(s2))     # None
+# print(s1)       # {10}
+# print(s2)       # {20, 30, 87}
+
+##################################################################################
