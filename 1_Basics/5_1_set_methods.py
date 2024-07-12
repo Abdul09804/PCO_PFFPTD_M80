@@ -190,3 +190,23 @@ print(s1.difference([10]))  # {20, 30}
 # print(s2)       # {20, 30, 87}
 
 ##################################################################################
+
+# 11) intersection_update
+"""
+-> It is used to update the set with the values obtained by intersection
+   method
+-> Syntax:
+            Var.intersection_update(iterable)
+-> The return type of intersection_update is None
+"""
+s1 = {10, 20, 30}
+s2 = {30, 20, 87}
+print(s1.intersection(s2))      # {20, 30}
+print(s1)           # {10, 20, 30}
+
+print(s1.intersection_update(s2))   # NOne
+print(s1)       # {20, 30}
+print(s2)       # {20, 30, 87}
+
+#############################################################################
+
