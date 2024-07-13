@@ -69,3 +69,84 @@ print(temperatures)     # {'Bengaluru': 38, 'Chennai': 42, 'Delhi': 40, 'Kashmir
 
 ###################################################################################
 
+# 5) fromkeys
+"""
+-> It is used to create a dictionary from the values of iterable
+-> Syntax:
+            Var.fromkeys(iterable)          # returns dict with keys as values of iterable and value as None
+            Var.fromkeys(iterable, val)     # return dict with keys as values of iterable and value as val
+"""
+
+print({}.fromkeys('abc'))   # {'a': None, 'b': None, 'c': None}
+
+d = {}.fromkeys([1, 2, 3])
+print(d)        # {1: None, 2: None, 3: None}
+
+print({}.fromkeys('abcd', True))
+
+temperature = {'Bengaluru': 38, 'Delhi': 40, 'Kashmir': 32, 'Mumbai': 43}
+
+print(temperature.fromkeys('xyz'))  # {'x': None, 'y': None, 'z': None}
+print(temperature)      # {'Bengaluru': 38, 'Delhi': 40, 'Kashmir': 32, 'Mumbai': 43}
+
+############################################################################
+
+# 6) setdefault
+"""
+-> It is used to add a new key value pair to the dictionary
+-> Syntax:
+            Var.setdefault(key)         # creates a key with value as None
+            Var.setdefault(key, value)  # creates a new key with value as 'value'
+-> If the key is already present, it will not alter the key
+"""
+
+d = {'a': 1, 'b': 2, 'c': 3}
+print(d.setdefault('d'))    # NOne
+print(d)        # {'a': 1, 'b': 2, 'c': 3, 'd': None}
+
+d.setdefault('e', 10)
+print(d)    # {'a': 1, 'b': 2, 'c': 3, 'd': None, 'e': 10}
+
+d.setdefault('a', 100)
+print(d)    # {'a': 1, 'b': 2, 'c': 3, 'd': None, 'e': 10}
+
+##############################################################################
+
+# 7) keys
+"""
+-> It is used to get all the keys of a dictionary
+-> Syntax:
+            Var.keys()
+"""
+temperature = {'Bengaluru': 38, 'Delhi': 40, 'Kashmir': 32, 'Mumbai': 43}
+print(temperature.keys())   # dict_keys(['Bengaluru', 'Delhi', 'Kashmir', 'Mumbai'])
+
+d = {'a': 1, 'b': 2, 'c': 3, 'd': None, 'e': 10}
+print(d.keys())     # dict_keys(['a', 'b', 'c', 'd', 'e'])
+
+#############################################################################
+
+# 8) values
+"""
+-> It is used to get the values of the dictionary
+-> Syntax:
+            Var.values()
+"""
+
+print(d.values())           # dict_values([1, 2, 3, None, 10])
+print(temperature.values()) # dict_values([38, 40, 32, 43])
+
+###############################################################################
+
+# 9) items
+"""
+-> It is used to get a collection of tuple with key and value pair
+-> Syntax:  
+            Var.items()
+"""
+
+print(d.items())            # dict_items([('a', 1), ('b', 2), ('c', 3), ('d', None), ('e', 10)])
+print(temperature.items())  # dict_items([('Bengaluru', 38), ('Delhi', 40), ('Kashmir', 32), ('Mumbai', 43)])
+
+#################################################################################
+
