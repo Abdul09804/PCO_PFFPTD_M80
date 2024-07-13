@@ -124,3 +124,47 @@ print(st[-5:])
 -> To get the last 'n' values we make use of the syntax,
             Var[-n:]
 """
+
+##########################################################################################
+
+sam = [4, 9.75, 'hello', ['john', 'steve', 'mary'], {8, 56, 93}, (6, 3)]
+
+# 9.75
+# 'steve'
+# 'mary'
+# 'yram'
+# (3, 6)
+# ['mary', 'steve']
+# 4
+# [4]
+
+pyspiders = {'development': ['python',
+                             'sql',
+                             {'web technology': ['html', 'css', 'java script']},
+                             'django'],
+             'testing': ['python',
+                         'sql',
+                         {'manual testing': ['sdlc', 'testing', 'stlc']},
+                         'automation']
+             }
+
+# python
+# sql
+# html
+# testing
+# ssc
+# clts
+# ognajd
+
+
+sam = {'a': ['java', 'python'],
+       'b': ('manual', 'automation'),
+       'c': {'data', 'sql', 'manual'},
+       'd': {'e': {'f': [1, 2, [3, 4]]}}
+       }
+
+# automation
+# manual
+# [4, 3]
+# avaj
+
