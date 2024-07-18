@@ -93,8 +93,37 @@ False -> s1 is not a subset of s2
 
 ########################################################################################
 
+# 5) Relational greater than equal to operator
 
+print([3, 2, 1] >= [1, 20, 20])         # True
 
+print([3, 2, 1] >= [3, 20, 20])         # False
+
+print(['hello', 89, 86] >= ['hellO', 100, 200])     # True -> 'hello' >= 'hellO' -> 'o' > 'O' -> 111 > 79
+
+# print(ord('o'), ord('O'))   # 111 79
+
+print([3, 2, 1] >= [3, 2, 1])       # True -> 1 >= 1
+
+print('testing' >= 'Testing')       # t > T
+
+print({1, 2, 3} >= {2, 3})          # True -> set1 is superset of set2
+
+print({1, 2, 3, 4} >= {1, 2, 3, 4})     # True -> set1 is equal to set2
+
+print({10, 20, 30} >= {1, 2, 3})        # False -> set1 is not a superset of set2 or is equal to set2
+
+"""
+For set, 
+set1 >= set2
+True -> if set1 is superset of set2 or if set1 is equal to se2
+"""
+
+######################################################################################
+
+# 6) Relational lesser than or equal to operator
+
+#####################################################################################
 
 
 
