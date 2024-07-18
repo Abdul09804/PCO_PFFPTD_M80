@@ -47,4 +47,28 @@ True and True and True and False and False and True ->
 """
 
 
-print(True and True and True and False and False and True)      #
+print(True and True and True and False and False and True)      # False
+
+print('hello' and 'hai' and 'python' and 'programming')     # programming
+
+# check if a character is an uppercase character
+
+ch = 'E'    # 'r', 'F'
+print(ord(ch) >= 65 and ord(ch) <= 90)      # 69 >= 65 and 69 <= 90 -> True and True -> True
+
+print(65 <= ord(ch) <= 90)      # 65 <= 69 <= 90    -> True
+
+print('A' <= ch <= 'Z')         # 65 <= 69 <= 90    -> True
+
+# check if a character is lowercase character
+
+ch = 'x'
+
+print('a'<=ch<='z')         # 97 <= 120 <= 122 -> True
+
+# check if a character is a digit
+
+ch = '6'
+print('0' <= ch <= '9')     # True
+
+
