@@ -99,3 +99,35 @@ print('a' > 'A' or 'a' > 'c')   # True
 
 print(0 or False or [()] or ({}) or 87)     # [()]
 
+# check if a character is an alphabet
+ch = '8'
+print('A'<=ch<='Z' or 'a'<=ch<='z')
+
+#  check if char is an alphanumeric character
+print('A'<=ch<='Z' or 'a'<=ch<='z' or '0'<=ch<='9')
+
+print('0'<='8'<='9')    # True
+
+####################################################################################
+
+# 3) Logical not operator
+
+"""
+-> It is an operator which gives the result as True if the i/p is False and vice versa
+-> The resultant of not is boolean
+"""
+
+print(not 8)    # False
+
+print(not ())       # True
+
+print(not 4==3)     # True
+
+print(not [9, 8])       # False
+
+ch = 'r'
+print(not 'A'<=ch<='Z')
+
+
+######################################################################################
+
