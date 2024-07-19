@@ -71,4 +71,31 @@ print('a'<=ch<='z')         # 97 <= 120 <= 122 -> True
 ch = '6'
 print('0' <= ch <= '9')     # True
 
+########################################################################################
+
+# 2) LOgical or operator
+"""
+-> 'or' is an operator which gives the result as True if any one of the operand is True,
+    it gives the result as False only if all the operands are False
+-> Truth Table
+    op1     op2     o/p
+    False   False   False
+    False   True    True
+    True    False   True
+    True    True    True
+-> The output will be the first non default operand, if all the operands are default values
+   then the output will be the last operand
+"""
+
+print(6 or 7)       # 6
+
+print('python' or 'java')       # python
+
+print(0.0 or False)     # False
+
+print(4>3 or 9>7)       # True or True -> True
+
+print('a' > 'A' or 'a' > 'c')   # True
+
+print(0 or False or [()] or ({}) or 87)     # [()]
 
