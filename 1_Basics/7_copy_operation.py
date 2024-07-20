@@ -7,7 +7,7 @@
    3) Deep Copy
 """
 
-# 1) Shallow Copy
+# 1) General Copy
 """
 -> We copy the variable space of one variable to another variable
 -> Syntax:
