@@ -1,0 +1,18 @@
+# Control Statements
+-> These are the statements which controls the flow of execution of the program
+-> 1) Conditional Statements
+   2) Looping Statements
+
+1) Conditional Statements
+-> A certain set of statements gets executed based on some condition
+    a) if
+    b) if else
+    c) elif
+    d) nested if
+
+2) Looping Statement
+-> A set of instructions gets executed repeatedly until the given condition is False
+    a) while loop
+    b) for loop
+
+

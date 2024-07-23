@@ -54,9 +54,9 @@ Enter the value : 87689
         eval(input(message))
 """
 
-val = eval(input('Enter the value : '))
-print(val)
-print(type(val))
+# val = eval(input('Enter the value : '))
+# print(val)
+# print(type(val))
 """
 Enter the value : 10
 10

@@ -24,17 +24,22 @@
 #     print('Uppercase Character')
 
 # 6) WAP to check whether a given character is a lowercase character
-char = input('Enter the character : ')
-if 'a' <= char <= 'z':
-    print('Lowercase Character')
+# char = input('Enter the character : ')
+# if 'a' <= char <= 'z':
+#     print('Lowercase Character')
 
 # 7) WAP to check whether a given character is an alphabet
 """ 'A'<=ch<='Z' or 'a'<=ch<='z' """
 
 # 8) WAP to check whether a given character is a alphanumeric
+""" 'A'<=ch<='Z' or 'a'<=ch<='z' or '0'<=ch<='9' """
+
 # 9) WAP to check if a given character is a special character
+""" not('A'<=ch<='Z' or 'a'<=ch<='z' or '0'<=ch<='9') """
 
-
+ch = input('Enter the character : ')
+if not('A'<=ch<='Z' or 'a'<=ch<='z' or '0'<=ch<='9'):
+    print('Special Character')
 
 
 
