@@ -24,6 +24,7 @@
 #     print('not a lowercase character')
 
 # 3) WAP to check if a character is a special character or an alphanumeric character
+""" if not('A'<=ch<='Z' or 'a'<=ch<='z' or '0'<=ch<='9') -> special else alphanumeric """
 
 # 4) WAP to check if the given data is a single value datatype
 # data = eval(input('Enter the data : '))
