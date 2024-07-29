@@ -261,8 +261,8 @@ p	y	t	h	o	n 		p	r	o	g	r	a	m
 # 17) find
 """
 -> It works same as index if the value is present.
--> If the value is not present, control will throw ValueError in case index method
-   but, it will give the result as -1 if the value is not present.
+-> If the value is not present, control will throw ValueError in case of index method
+   but, it will give the result as -1 if the value is not present in find method
 -> Syntax:
         Var.find(substring) 
         Var.find(substring, SI)
