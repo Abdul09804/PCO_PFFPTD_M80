@@ -56,13 +56,13 @@ n = 7
 
 # 5) WAP to find the sum of first 'n' natural numbers
 
-n = 10
-s = 0
-i = 1
-while i <= n:
-    s += i
-    i += 1
-print(f"The num of first {n} natural numbers is {s}")
+# n = 10
+# s = 0
+# i = 1
+# while i <= n:
+#     s += i
+#     i += 1
+# print(f"The num of first {n} natural numbers is {s}")
 """
 n = 4
 s = 0 -> 1 -> 3 - > 6 -> 10
@@ -85,5 +85,121 @@ s = 6 + 4 = 10
 
 # 6) WAP to find the product of first 'n' natural numbers
 
+# n = int(input('Enter the number : '))
+# i = 1
+# p = 1
+# while i <= n:
+#     p *= i
+#     i += 1
+# print(f"The product of first '{n}' natural numbers is {p}")
+
+# 7) WAP to print all the characters present at odd index numbers
+
+# st = 'hello'
+# i = 0
+# while i < len(st):
+#     if i % 2 != 0:
+#         print(st[i])
+#     i += 1
+
+# 8) WAP to print the values present at even index in a given list
+
+# 9) WAP to print all the uppercase characters in a given string
+
+st = 'HEllO WoRld'
+i = 0
+while i < len(st):
+    if 'A' <= st[i] <= 'Z':
+        print(st[i])
+    i += 1
+
+st = 'HEllO WoRld'
+i = 0
+while i < len(st):
+    if st[i].isupper() == True:        # st[i].isupper()
+        print(st[i])
+    i += 1
+
+
+# 10) WAP to print all the lowercase characters in a given string
+# 11) WAP to print all the numeric characters in a given string
+# 12) WAP to print all the special characters in a given string
+
+
+# 13) WAP to extract all the vowels in a given string
+
+st = 'AeroPlane'
+# Aeoae
+vowels = ''
+i = 0
+while i < len(st):
+    if st[i] in 'aeiouAEIOU':
+        vowels += st[i]
+    i += 1
+
+print(vowels)
+
+"""
+st = 'AeroPlane'
+i = 0
+vowels = '' -> 'A'
+
+'A' in 'aeiouAEIOU' -> True
+vowels = '' + 'A' = 'A'
+
+'e' in 'aeiouAEIOU' -> True
+vowels = 'A' + 'e' = 'Ae'
+
+'r' in 'aeiouAEIOU' -> False
+"""
+
+# 14) WAP to extract all the even numbers in a given list
+
+l = [2, 8, 81, 87, 99, 24, 88, 55, 44]
+out = []
+i = 0
+while i < len(l):
+    if l[i] % 2 == 0:
+        out += [l[i]]
+    i += 1
+print(out)
+
+"""
+out = [] + [2] = [2]
+out = [2] + [8] = [2, 8]
+"""
+
+# 15) WAP to extract all the consonants in a given string
+
+# 16) WAP to find the sum of all real numbers present in a given list
+
+li = [3, 8.65, 9+7j, 23, 9.123, 8.34, 'hai', False, 9.99]
+# o/p = 62.103
+s = 0
+i = 0
+while i < len(li):
+    if type(li[i]) in [int, float]:
+        s += li[i]
+    i += 1
+print(s)
+
+# 17) WAP to extract all the string dataitems in a given tuple to another tuple
+
+t = ('hai', 7.9, '123', 123, 'python', 'data')
+out = ()
+i = 0
+while i < len(t):
+    if type(t[i]) == str:
+        out += (t[i],)
+    i += 1
+print(out)
+
+# 18) WAP to count all the numbers between 1 and 200 which are divisible by 3
+
+# 19) WAP to create a list of all numbers between 100 and 3500 which are divisible by both 5 and 7
+
+# 20) WAP to separate all the even and odd numbers to a separate list
+
+# 21) WAP to separate all the characters from a given string
 
 
