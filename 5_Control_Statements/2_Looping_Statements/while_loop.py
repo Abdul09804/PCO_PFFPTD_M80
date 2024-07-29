@@ -202,4 +202,68 @@ print(out)
 
 # 21) WAP to separate all the characters from a given string
 
+# 22) WAP to reverse a given string without using slicing
+
+# Method 1
+st = 'data'
+# atad
+out = ''
+i = -1
+while i >= -len(st):
+    out += st[i]
+    i -= 1
+print(out)
+"""
+st = 'data'
+out = '' -> 'a' -> 'at' -> 'ata' -> 'atad'
+i = -1 -> -2 -> -3 -> -4 -> -5
+
+-1 >= -4 -> True
+out = '' + 'a' = 'a'
+
+-2 >= -4 -> T
+out = 'a' + 't' = 'at'
+
+-3 >= -4 -> T
+out = 'at' + 'a' = 'ata'
+
+-4 >= -4 -> T
+out = 'ata' + 'd' = 'atad'
+
+-5 >= -4 -> False
+"""
+
+# Method 2
+st = 'data'
+# atad
+out = ''
+i = len(st) - 1
+while i >= 0:
+    out += st[i]
+    i -= 1
+print(out)
+
+# Method 3
+st = 'data'
+rev = ''
+i = 0
+while i < len(st):
+    rev = st[i] + rev
+    i += 1
+print(rev)
+"""
+st = 'data'
+rev = '' -> 'd' -> 'ad' -> 'tad' -> 'atad'
+i = 0 -> 1 -> 2 -> 3 -> 4
+
+rev = 'd' + '' = 'd'
+
+rev = 'a' + 'd' = 'ad'
+
+rev = 't' + 'ad' = 'tad'
+
+rev = 'a' + 'tad' = 'atad'
+"""
+
+# 23) WAP to check if a given string is a palindrome or not
 
