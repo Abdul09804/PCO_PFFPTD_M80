@@ -307,4 +307,7 @@ temp = 8 // 10 = 0
 0 != 0 -> False
 """
 
+# 25) WAP to check if a given number is a palindrome
+
+
 
