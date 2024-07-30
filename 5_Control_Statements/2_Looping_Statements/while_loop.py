@@ -266,4 +266,45 @@ rev = 'a' + 'tad' = 'atad'
 """
 
 # 23) WAP to check if a given string is a palindrome or not
+st = 'icici'
+rev = ''
+i = 0
+while i < len(st):
+    rev = st[i] + rev
+    i += 1
+if st == rev:
+    print('The given string is a palindrome')
+else:
+    print('The given string is not a palindrome')
+
+# 24) WAP to reverse a given number without typecasting or slicing
+
+num = 865
+temp = num
+rev = 0
+while temp != 0:        # temp > 0
+    rev = rev*10 + temp % 10
+    temp = temp // 10
+print(f"The reverse of given number {num} is {rev}")
+
+"""
+num = 865
+temp = 865 -> 86 -> 8 -> 0
+rev = 0 -> 5 -> 56 -> 568
+
+865 != 0
+rev = 0*10 + 5 = 5
+temp = 865 // 10 = 86
+
+86 != 0
+rev = 5*10 + 6 = 56
+temp = 86 // 10 = 8
+
+8 != 0
+rev = 56*10 + 8 = 568
+temp = 8 // 10 = 0
+
+0 != 0 -> False
+"""
+
 
