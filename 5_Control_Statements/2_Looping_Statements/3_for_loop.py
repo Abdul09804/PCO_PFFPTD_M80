@@ -120,4 +120,56 @@ for i in range(5):
 3
 4
 """
+st = 'apple'
+for index in range(len(st)):
+    print(index)
+"""
+0
+1
+2
+3
+4
+"""
+
+for index in range(len(st)):
+    print(index, st[index])
+"""
+0 a
+1 p
+2 p
+3 l
+4 e
+"""
+
+###########################################################################################
+
+# 1) WAP to extract all the vowels in a given string
+
+st = 'airways'
+vowels = ''
+for i in st:
+    if i in 'aeiouAEIOU':
+        vowels += i
+print(vowels)       # aia
+
+# 2) WAP to extract all the float numbers from a given list
+
+"""
+3) WAP to extract all the string present in a tuple to a dictionary where key is the 
+   string and value is the length of the string
+"""
+
+t = ('bob', True, 'steve', 9.87, 'alexander')
+d = {}
+for i in t:
+    if type(i) == str:
+        d[i] = len(i)
+print(d)        # {'bob': 3, 'steve': 5, 'alexander': 9}
+
+# 4) WAP to count the number of occurrence of a given character in a string without using count
+
+st = 'mississippi'
+ch = 's'
+# o/p = 4
+
 
