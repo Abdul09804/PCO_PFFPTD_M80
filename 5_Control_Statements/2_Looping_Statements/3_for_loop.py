@@ -194,3 +194,13 @@ for i in st:
     res[i] = st.count(i)
 print(res)      # {'a': 5, 'b': 3, 'c': 4}
 
+res = {}
+for i in st:
+    if i not in res:
+        res[i] = 1
+    else:
+        res[i] += 1
+print(res)
+
+
+
