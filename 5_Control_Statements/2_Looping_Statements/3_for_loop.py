@@ -202,5 +202,55 @@ for i in st:
         res[i] += 1
 print(res)
 
+# 6) WAP to find the length of a list without using len
+
+l = ['hello', 87, 9.75, [1, 2], 2-7j, ('a',)]
+count = 0
+for _ in l:     # throw away variable
+    count += 1
+print(count)    # 6
+
+# 7) WAP to remove all duplicates from the string
+"""
+st = 'mississippi'
+# o/p = misp
+"""
+
+# 8) WAP to extract all odd integer values present at even index in a given string
+
+# 9) WAP o create a tuple of 'n' natural numbers along with it's cube
+
+# 10) WAP to check if a given list is homogeneous
+
+l = [1, 2.8, 3, 4, 5]
+count = 0
+for i in l:
+    if type(l[0]) == type(i):
+        count += 1
+if count == len(l):
+    print('Homogenous')
+else:
+    print('Heterogeneous')
+
+# 11) WAP to create a list of all the factors of a given number
+"""
+8 -> 1 2 4 8
+12 -> 1 2 3 4 6 12
+7 -> 1 7
+"""
+num = 1000
+factors = []
+for n in range(1, num+1):
+    if num % n == 0:    # n is a factor of num
+        factors.append(n)
+print(factors)
+
+
+
+
+
+
+
+
 
 
