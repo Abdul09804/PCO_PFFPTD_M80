@@ -171,5 +171,26 @@ print(d)        # {'bob': 3, 'steve': 5, 'alexander': 9}
 st = 'mississippi'
 ch = 's'
 # o/p = 4
+count = 0
+for i in st:
+    if i == ch:
+        count += 1
+print(count)
 
+# 5) WAP to get the following output
+"""
+st = 'aabcabccbaac'
+# o/p = 'a5b3c4'
+"""
+st = 'aabcabccbaac'
+res = ''
+for i in st:
+    if i not in res:
+        res = res + i + str(st.count(i))    # '' + 'a' + '5' = 'a5'
+print(res)  # a5b3c4
+
+res = {}
+for i in st:
+    res[i] = st.count(i)
+print(res)      # {'a': 5, 'b': 3, 'c': 4}
 
