@@ -245,6 +245,34 @@ for n in range(1, num+1):
         factors.append(n)
 print(factors)
 
+# 12) WAP to check if a given number is perfect number
+"""
+6 -> 1 + 2 + 3 = 6 -> Perfect number
+18 -> 1 + 2 + 3 + 6 + 9 = 21 -> not a perfect number
+28 -> 1 + 2 + 4 + 7 + 14 = 28 -> Perfect number 
+15 -> 1 + 3 + 5 = 8 -> not a perfect number
+"""
+
+num = 28
+sum_of_factors = 0
+for n in range(1, num//2+1):
+    if num % n == 0:
+        sum_of_factors += n
+if sum_of_factors == num:
+    print('The given number is a perfect number')
+else:
+    print('Not a perfect number')
+
+# 13) WAP to reverse the key and values of a dictionary
+
+d = {'apple': 120, 'orange': 60, 'banana': 80, 'pineapple': 100}
+res = {}
+for i in d:
+    res[d[i]] = i
+print(res)      # {120: 'apple', 60: 'orange', 80: 'banana', 100: 'pineapple'}
+
+
+
 
 
 
