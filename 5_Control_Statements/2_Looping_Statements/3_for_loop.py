@@ -216,9 +216,11 @@ st = 'mississippi'
 # o/p = misp
 """
 
-# 8) WAP to extract all odd integer values present at even index in a given string
+# 8) WAP to extract all odd integer values present at even index in a given list
+""" for i in range(len(l)) -> if i % 2 == 0 and l[i] % 2 != 0 """
 
-# 9) WAP o create a tuple of 'n' natural numbers along with it's cube
+# 9) WAP to create a tuple of 'n' natural numbers along with it's cube
+""" res += ((n, n**3),) """
 
 # 10) WAP to check if a given list is homogeneous
 
@@ -270,6 +272,8 @@ res = {}
 for i in d:
     res[d[i]] = i
 print(res)      # {120: 'apple', 60: 'orange', 80: 'banana', 100: 'pineapple'}
+
+# 14) WAP to check if a given number is a prime number
 
 
 
