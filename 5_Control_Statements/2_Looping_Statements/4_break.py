@@ -102,4 +102,7 @@ else:
 # 11) Guess the number
 
 
+while 4 > 3:
+    print('hello')
+
 

@@ -84,7 +84,7 @@ for val in d.values():
 """
 
 for key in d:
-    print((key, d[key]))
+    print(f"{key}: {d[key]}")
 """
 ('a', 1)
 ('b', 2)
@@ -215,6 +215,12 @@ print(count)    # 6
 st = 'mississippi'
 # o/p = misp
 """
+st = 'mississippi'
+res = ''
+for ch in st:
+    if ch not in res:
+        res += ch
+print(res)
 
 # 8) WAP to extract all odd integer values present at even index in a given list
 """ for i in range(len(l)) -> if i % 2 == 0 and l[i] % 2 != 0 """
