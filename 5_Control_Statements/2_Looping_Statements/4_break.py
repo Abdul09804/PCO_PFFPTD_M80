@@ -101,8 +101,18 @@ else:
 
 # 11) Guess the number
 
+num = 765
+while True:
+    n = int(input('Guess the number : '))
+    if n == num:
+        print("Hurray!!! Correct Guess :)")
+        break
+    elif n > num:
+        print('Enter a lesser number')
+        print()
+    else:
+        print('Enter a larger number')
+        print()
 
-while 4 > 3:
-    print('hello')
 
 
