@@ -66,6 +66,35 @@ for n in range(1, 6):
 print(fact)
 
 # 3) WAP to get the following output
+"""
+num_list = [[1, 8, 7], [7, 5], [4, 10, 27], [9, 10, 96, 5]]
+o/p = [16, 12, 41, 120]
+"""
+
+num_list = [[1, 8, 7], [7, 5], [4, 10, 27], [9, 10, 96, 5]]
+out = []
+for i in num_list:
+    s = 0
+    for j in i:
+        s += j
+    out.append(s)
+print(out)
+
+# 4) WAP to print all the prime numbers between the range m, n
+"""
+m = 2
+n = 20
+O/p -> 2 3 5 7 11 13 17 19
+"""
+m, n = 1, 10
+for num in range(m, n+1):
+    if num > 1:
+        for i in range(2, num//2 + 1):
+            if num % i == 0:
+                break
+        else:
+            print(num)
+
 
 
 
