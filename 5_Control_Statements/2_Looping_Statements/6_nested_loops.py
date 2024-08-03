@@ -117,9 +117,106 @@ while True:
 
     num += 1
 
+# 6) WAP to print 'n'th prime number
+"""
+n = 4 -> 7
+n = 25 -> 97
+"""
+
+n = 7
+num = 2
+count = 0
+while True:
+
+    for i in range(2, num // 2 + 1):
+        if num % i == 0:
+            break           # inner loop
+    else:
+        count += 1
+
+    if count == n:
+        print(num)
+        break       # this breaks outer loop
+
+    num += 1
 
 
+# 7) WAP to print all the armstrong numbers between the range m, n
+"""
+371 -> 3**3 + 7**3 + 1**3 = 27 + 343 + 1 = 371  -> Armstrong
+370 -> 3**3 + 7**3 + 0**3 = 370 -> Armstrong
+123 -> 1**3 + 2**3 + 3**3 = 1 + 8 + 27 = 36 -> No
+1634 -> 1**4 + 6**4 + 3**4 + 4**4 = 1 + 1296 + 81 + 256 = 1634 -> Armstrong
+"""
+# 8) WAP to print 'n' armstrong numbers
+# 9) WAP to print 'n'th armstrong number
 
+# 10) WAP to print all the harshad numbers between the range m, n
+"""
+if a number is exactly divisible by sum of it's digits then the number is a Harshad number
+12 -> 1 + 2 = 3 -> 12 % 3 == 0 -> True -> Harshad number
+34 -> 3 + 4 = 7 -> 34 % 7 == 0 -> False -> No
+21 -> 2 + 1 = 3 -> 21 % 3 == 0 -> True -> Harshad number
+"""
+# 11) WAP to print 'n' harshad numbers
+# 12) WAP to print 'n'th harshad number
+
+# 13) WAP to print all the perfect numbers between the range m,n
+# 14) WAP to print 'n' perfect numbers
+# 15) WAP to print 'n'th perfect number
+
+
+# 16) WAP to 'n' fibonacci numbers
+"""
+fibonacci series -> 0 1 1 2 3 5 8 13 21 34 ....................
+"""
+
+n = 10
+num1 = 0
+num2 = 1
+if n == 1:
+    print(num1)
+else:
+    print(num1, num2, sep='\n')
+    count = 2                       # 2 fibonacci numbers are already printed
+    while count < n:
+        num3 = num1 + num2
+        num1 = num2
+        num2 = num3
+        print(num2)
+        count += 1
+
+"""
+n = 6
+num1 = 0 -> 1 -> 1 -> 2 -> 3
+num2 = 1 -> 1 -> 2 -> 3 -> 5
+0 1 1 2 3 5
+count = 2 -> 3 -> 4 -> 5 -> 6
+
+2 < 6 -> True
+num3 = 0 + 1 = 1
+num1 = 1
+num2 = 1
+
+3 < 6 -> True
+num3 = 1 + 1 = 2 
+num1 = 1
+num2 = 2
+
+4 < 6 -> True
+num3 = 1 + 2 = 3
+num1 = 2
+num2 = 3
+
+5 < 6 -> True
+num3 = 2 + 3 = 5
+num1 = 3 
+num2 = 5
+
+6 < 6 -> False 
+"""
+
+# 17) WAP to print 'n'th fibonacci number
 
 
 
