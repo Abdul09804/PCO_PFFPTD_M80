@@ -3,6 +3,7 @@
 Syntax:
         Var = [val_to_be_appended for_loop]
         Var = [val_to_be_appended  for_loop  if <cond>]
+        Var = [true_value if <cond> else false_value  for_loop]
 """
 
 st = 'hello world'
@@ -118,6 +119,41 @@ print(factorial(5))     # 120
 
 res = [(i, factorial(i)) for i in range(1, 11)]
 print(res)
+
+#########################################################################################
+
+# WAP to create a list of numbers from 1 to 10 along with its cube if the number is odd, along with square if the number is even
+# o/p = [(1, 1), (2, 4), (3, 27), (4, 16), ........(9, 729),(10, 100)]
+
+res = [(i, i**3) if i % 2 !=0 else (i, i**2) for i in range(1, 11)]
+print(res)      # [(1, 1), (2, 4), (3, 27), (4, 16), (5, 125), (6, 36), (7, 343), (8, 64), (9, 729), (10, 100)]
+
+# reverse the string if the length is even else keep it as it is
+li = ['python', 'science', 'data', 'manual', 'web']
+res = [st[::-1] if len(st) % 2 == 0 else st for st in li]
+print(res)      # ['nohtyp', 'science', 'atad', 'launam', 'web']
+
+#########################################################################################
+
+# WAP to filter all the languages starting with 'p' or 'P'
+languages = ['python', 'php', 'java', 'Pearl', 'C']
+res1 = [language for language in languages if language.startswith('p') or language.startswith('P')]
+res2 = [language for language in languages if language[0] in 'pP']
+res3 = [language for language in languages if language[0].lower() == 'p']
+print(res1, res2, res3, sep='\n')
+"""
+['python', 'php', 'Pearl']
+['python', 'php', 'Pearl']
+['python', 'php', 'Pearl']
+"""
+
+# WAP to extract the string which has length less than 6
+
+words = ['a', 'alex', 'anthony', 'apple', 'alexander', 'abraham', 'michael']
+res = [word for word in words if len(word) < 6]
+print(res)  # ['a', 'alex', 'apple']
+
+########################################################################################
 
 
 
