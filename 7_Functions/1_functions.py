@@ -111,6 +111,90 @@ b = 'p'
 count_char(a, b)        # 2
 
 
+# WAP to extract all uppercase character in a given string
 
+def upper_case(st):
+    uc = ''
+    for i in st:
+        if 'A' <= i <= 'Z':
+            uc += i
+    print(uc)
+
+
+upper_case('FoReiGn')
+
+
+##########################################################################################
+
+# 3) Function without argunments and with return values
+"""
+Syntax:
+        def fname():
+            SB
+            return Val1, Val2, ....., Valn
+        print(fname())
+        res = fname()
+        print(res)
+        var1, var2, ., varn = fname()
+"""
+
+
+# def sam():
+#     return
+#
+#
+# print(sam())        # None
+# sam()
+
+def sam():
+    return 1, 2, 3
+
+
+sam()       
+print(sam())        #  (1, 2, 3)
+res = sam()
+print(res)          # (1, 2, 3)
+a, b, c  = sam()
+print(a, b, c)      # 1 2 3
+
+
+# WAP to get the following output
+nums = [8, 32, 86, 99, 12]
+# o/p = [8, 5, 14, 18, 3]
+
+def sum_of_digits():
+    nums = [8, 32, 86, 99, 12]
+    res = []
+    for num in nums:
+        s = 0
+        for i in str(num):
+            s += int(i)
+        res.append(s)
+    return res
+
+
+sum_of_digits()
+print(sum_of_digits())      # [8, 5, 14, 18, 3]
+
+#########################################################################################
+
+# 4) Function with arguments and with return value
+"""
+Syntax:
+        def fname(args):
+            SB
+        print(fname(args))
+        res = fname(args)
+        print(res)
+        Var1, Var2, ...., Varn = fname(args)
+"""
+
+def sam(a, b):
+    return a+b, a-b, a*b, a/b
+
+
+print(sam(4, 2))        # (6, 2, 8, 2.0)
+add, sub, mul, div = sam(4, 2)
+print(add, sub, mul, div)       # 6 2 8 2.0
 
 
