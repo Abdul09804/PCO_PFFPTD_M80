@@ -49,28 +49,66 @@ greetings()     # Hello Universe
 
 # WAP to reverse a given string
 
-def rev_str():
-    st = input('Enter the string : ')
-    rev = ''
-    for i in st:
-        rev = i + rev
-    print(rev)
-
-
-rev_str()
+# def rev_str():
+#     st = input('Enter the string : ')
+#     rev = ''
+#     for i in st:
+#         rev = i + rev
+#     print(rev)
+#
+#
+# rev_str()
 
 # WAP to count the number of integers in a given heterogeneous list
 
-def count_integers():
-    l = [1, 8.86, 'hai', 8+7j, 90, 12]
+# def count_integers():
+#     l = [1, 8.86, 'hai', 8+7j, 90, 12]
+#     count = 0
+#     for val in l:
+#         if type(val) == int:
+#             count += 1
+#     print(count)
+#
+#
+# count_integers()
+
+#########################################################################################
+
+# 2) Function with arguments and without return values
+
+"""
+Syntax:
+        def fname(Var1, Var2, ....., Varn):
+            SB
+        fname(Val1, Val2,......, Valn)
+"""
+
+# def display(name, empid, salary):
+#     print(f"Hello I'm {name}, my Employee ID is {empid} and I earn Rs.{salary} per month")
+#
+# # display()       # TypeError
+#
+# display("John", "ABC123", 20000)
+
+
+# WAP to count the number of occurrence of a given character in a string
+
+def count_char(st, ch):
     count = 0
-    for val in l:
-        if type(val) == int:
+    for i in st:
+        if i == ch:
             count += 1
     print(count)
 
 
-count_integers()
+count_char("apple", 'p')        # 2
+st = 'mississippi'
+ch = 's'
+count_char(st, ch)      # 4
+
+a = 'mississippi'
+b = 'p'
+count_char(a, b)        # 2
 
 
 
