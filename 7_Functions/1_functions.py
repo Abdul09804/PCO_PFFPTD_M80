@@ -26,6 +26,51 @@ User Defined functions are classified into 4 types
 4) Function with arguments and with return values - count, type, id
 """
 
+# 1) Function without arguments and without return values
+"""
+-> Syntax:
+        def fname():
+            SB
+        fname()
+"""
+
+
+def greetings():
+    print('Hello Universe')
+
+
+print(greetings)        # <function greetings at 0x00000282BB8004A0>
+print(greetings())
+"""
+Hello Universe
+None
+"""
+greetings()     # Hello Universe
+
+# WAP to reverse a given string
+
+def rev_str():
+    st = input('Enter the string : ')
+    rev = ''
+    for i in st:
+        rev = i + rev
+    print(rev)
+
+
+rev_str()
+
+# WAP to count the number of integers in a given heterogeneous list
+
+def count_integers():
+    l = [1, 8.86, 'hai', 8+7j, 90, 12]
+    count = 0
+    for val in l:
+        if type(val) == int:
+            count += 1
+    print(count)
+
+
+count_integers()
 
 
 
