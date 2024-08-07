@@ -39,13 +39,13 @@ def greetings():
     print('Hello Universe')
 
 
-print(greetings)        # <function greetings at 0x00000282BB8004A0>
-print(greetings())
+# print(greetings)        # <function greetings at 0x00000282BB8004A0>
+# print(greetings())
 """
 Hello Universe
 None
 """
-greetings()     # Hello Universe
+# greetings()     # Hello Universe
 
 # WAP to reverse a given string
 
@@ -100,15 +100,15 @@ def count_char(st, ch):
             count += 1
     print(count)
 
-
-count_char("apple", 'p')        # 2
-st = 'mississippi'
-ch = 's'
-count_char(st, ch)      # 4
-
-a = 'mississippi'
-b = 'p'
-count_char(a, b)        # 2
+#
+# count_char("apple", 'p')        # 2
+# st = 'mississippi'
+# ch = 's'
+# count_char(st, ch)      # 4
+#
+# a = 'mississippi'
+# b = 'p'
+# count_char(a, b)        # 2
 
 
 # WAP to extract all uppercase character in a given string
@@ -121,7 +121,7 @@ def upper_case(st):
     print(uc)
 
 
-upper_case('FoReiGn')
+# upper_case('FoReiGn')
 
 
 ##########################################################################################
@@ -146,35 +146,35 @@ Syntax:
 # print(sam())        # None
 # sam()
 
-def sam():
-    return 1, 2, 3
-
-
-sam()       
-print(sam())        #  (1, 2, 3)
-res = sam()
-print(res)          # (1, 2, 3)
-a, b, c  = sam()
-print(a, b, c)      # 1 2 3
+# def sam():
+#     return 1, 2, 3
+#
+#
+# sam()
+# print(sam())        #  (1, 2, 3)
+# res = sam()
+# print(res)          # (1, 2, 3)
+# a, b, c  = sam()
+# print(a, b, c)      # 1 2 3
 
 
 # WAP to get the following output
 nums = [8, 32, 86, 99, 12]
 # o/p = [8, 5, 14, 18, 3]
 
-def sum_of_digits():
-    nums = [8, 32, 86, 99, 12]
-    res = []
-    for num in nums:
-        s = 0
-        for i in str(num):
-            s += int(i)
-        res.append(s)
-    return res
-
-
-sum_of_digits()
-print(sum_of_digits())      # [8, 5, 14, 18, 3]
+# def sum_of_digits():
+#     nums = [8, 32, 86, 99, 12]
+#     res = []
+#     for num in nums:
+#         s = 0
+#         for i in str(num):
+#             s += int(i)
+#         res.append(s)
+#     return res
+#
+#
+# sum_of_digits()
+# print(sum_of_digits())      # [8, 5, 14, 18, 3]
 
 #########################################################################################
 
@@ -183,18 +183,157 @@ print(sum_of_digits())      # [8, 5, 14, 18, 3]
 Syntax:
         def fname(args):
             SB
+            retun val1, val2, ...., valn
+            
         print(fname(args))
         res = fname(args)
         print(res)
         Var1, Var2, ...., Varn = fname(args)
 """
 
-def sam(a, b):
-    return a+b, a-b, a*b, a/b
+# def sam(a, b):
+#     return a+b, a-b, a*b, a/b
+#
+#
+# print(sam(4, 2))        # (6, 2, 8, 2.0)
+# add, sub, mul, div = sam(4, 2)
+# print(add, sub, mul, div)       # 6 2 8 2.0
 
 
-print(sam(4, 2))        # (6, 2, 8, 2.0)
-add, sub, mul, div = sam(4, 2)
-print(add, sub, mul, div)       # 6 2 8 2.0
+############################################################################################
+
+# WAP to reverse the given string
+
+# st = 'hello world'
+# rev = ''
+# for ch in st:
+#     rev = ch + rev
+# print(rev)
+
+# Type1
+
+# def rev1():
+#     # st = 'hello world'
+#     # rev = ''
+#     # for ch in st:
+#     #     rev = ch + rev
+#     # print(rev)
+#
+#
+# rev1()
+
+
+# Type2
+
+# def rev2(st):
+#     rev = ''
+#     for ch in st:
+#         rev = ch + rev
+#     print(rev)
+#
+#
+# rev2('hello')
+# rev2(input('Enter the string : '))
+
+
+# Type3
+
+# def rev3():
+#     st = 'hello world'
+#     rev = ''
+#     for ch in st:
+#         rev = ch + rev
+#     return rev
+#
+# print(rev3())
+# res = rev3()
+# print(rev)
+
+# Type4
+
+# def rev4(st):
+#     rev = ''
+#     for ch in st:
+#         rev = ch + rev
+#     return rev
+#
+#
+# print(rev4('python'))
+# res = rev4('python')
+# print(res)
+
+#######################################################################################
+
+# WAP to check if a given number is a prime number
+
+num = 7
+for i in range(2, num//2+1):
+    if num % i == 0:
+        print(False)
+        break
+else:
+    print(True)
+
+
+# Type 1
+
+def is_prime1():
+    num = 7
+    for i in range(2, num//2 + 1):
+        if num % i == 0:
+            print(False)
+            break
+    else:
+        print(True)
+
+
+is_prime1()
+
+# Type2
+
+def is_prime2(num):
+    for i in range(2, num//2 + 1):
+        if num % i == 0:
+            print(False)
+            break
+    else:
+        print(True)
+
+
+is_prime2(21)
+
+# Type3
+
+def is_prime3():
+    num = 16
+    for i in range(2, num//2+1):
+        if num % i == 0:
+            return False
+    else:
+        return True
+
+
+print(is_prime3())
+res = is_prime3()
+print(res)
+
+# Type4
+def is_prime4(num):
+    for i in range(2, num//2+1):
+        if num % i == 0:
+            return False
+    else:
+        return True
+
+
+print(is_prime4(61))
+
+num = int(input('Enter the number : '))
+if is_prime4(num) == True:
+    print('The given number is a prime number')
+else:
+    print('Not a prime number')
+
+
 
 
