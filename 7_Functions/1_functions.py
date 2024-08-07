@@ -335,5 +335,32 @@ else:
     print('Not a prime number')
 
 
+# WAP to check if a given number is a palindrome using all 4 types of functions
+# num = 865
+# temp = num
+# rev = 0
+# while temp != 0:        # temp > 0
+#     rev = rev*10 + temp % 10
+#     temp = temp // 10
+# if num == rev:
+#     print('Palindrome')
+# else:
+#     print('Not a palindrome')
+
+def is_palindrome(num):
+    temp = num
+    rev = 0
+    while temp != 0:  # temp > 0
+        rev = rev * 10 + temp % 10
+        temp = temp // 10
+    if num == rev:
+        return True
+    return False
+
+print(is_palindrome(8))
+
+
+
+
 
 
