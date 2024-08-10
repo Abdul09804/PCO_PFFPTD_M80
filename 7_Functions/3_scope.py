@@ -113,18 +113,18 @@ UnboundLocalError
 11 12
 """
 
-m = 1                   # global var
-def outer():
-    # m = 2               # local var for outer
-    def inner():
-        # m = 3           # local var for inner
-        print(m)
-    print(m)
-    inner()
-    print(m)
-
-outer()
-print(m)
+# m = 1                   # global var
+# def outer():
+#     m = 2               # local var for outer
+#     def inner():
+#         m = 3           # local var for inner
+#         print(m)
+#     print(m)
+#     inner()
+#     print(m)
+#
+# outer()
+# print(m)
 """
 2
 3
@@ -132,4 +132,74 @@ print(m)
 1
 """
 
+
+# def outer():
+#     p = 11
+#     def inner():
+#         p = 22
+#         print(p)
+#     print(p)
+#     inner()
+#     print(p)
+# outer()
+"""
+11
+22
+11
+"""
+
+# def outer():
+#     p = 11
+#     def inner():
+#         print(p)
+#         p = 22
+#         print(p)
+#     print(p)
+#     inner()
+#     print(p)
+# outer()
+"""
+11
+UnboundLocalError
+"""
+"""
+-> We make use of 'nonlocal' keyword to modify local variable inside nested function
+"""
+
+# def outer():
+#     p = 11
+#     def inner():
+#         nonlocal p
+#         print(p)
+#         p = 22
+#         print(p)
+#     print(p)
+#     inner()
+#     print(p)
+# outer()
+"""
+11
+11
+22
+22
+"""
+
+
+def outer():
+    m, n = 10, 20
+    def inner():
+        nonlocal n
+        m = 11          # local var of inner
+        n = 22
+        print(m, n)
+    print(m, n)
+    inner()
+    print(m, n)
+
+outer()
+"""
+10 20
+11 22
+10 22
+"""
 
