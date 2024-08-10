@@ -47,4 +47,27 @@ def result(li):
 
 print(result(li))
 
+##########################################################################################
+
+# WAP to get the following output
+
+nums = [86, 2, 986, 37, 8608]
+# o/p = [68, 2, 689, 73, 8068]
+
+def rev(num):
+    rev = 0
+    while num != 0:
+        rev = rev * 10 + num % 10
+        num = num // 10
+    return rev
+
+
+def res(li):
+    res = []
+    for num in li:
+        res += [rev(num)]
+    print(res)
+
+
+res(nums)
 
