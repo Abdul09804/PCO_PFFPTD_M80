@@ -113,3 +113,23 @@ UnboundLocalError
 11 12
 """
 
+m = 1                   # global var
+def outer():
+    # m = 2               # local var for outer
+    def inner():
+        # m = 3           # local var for inner
+        print(m)
+    print(m)
+    inner()
+    print(m)
+
+outer()
+print(m)
+"""
+2
+3
+2
+1
+"""
+
+
