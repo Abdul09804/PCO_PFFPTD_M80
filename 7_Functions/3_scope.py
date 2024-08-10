@@ -49,5 +49,67 @@ global variable -> these are the variables which gets created in the main frame 
 """
 10
 UnboundLocalError
+-> We get an error because the variable is accessed before even creating it
+"""
+
+"""
+-> To access and modify the global variable inside teh function we make use of a keyword 
+   called 'global'
+-> global has to be the first argument inside the function area
+-> global has to be followed by the variables which has to modified
+-> address of global variable will be stored in function area
+"""
+#
+# a = 10
+# def outer():
+#     global a
+#     print(a)
+#     a = 20
+#     print(a)
+# print(a)
+# outer()
+# print(a)
+"""
+10
+10
+20
+20
+"""
+
+
+# p = 10
+# q = 20
+#
+# def outer():
+#     global p
+#     p = 11          # modifies global variable
+#     q = 12          # local variable
+#     print(p, q)
+#
+# print(p, q)
+# outer()
+# print(p, q)
+"""
+10 20
+11 12
+11 20
+"""
+
+
+# p = 10
+# q = 20
+# def outer():
+#     global p, q
+#     p = 11          # modifies global variable
+#     q = 12          # local variable
+#     print(p, q)
+#
+# print(p, q)
+# outer()
+# print(p, q)
+"""
+10 20
+11 12
+11 12
 """
 
