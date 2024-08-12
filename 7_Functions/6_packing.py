@@ -90,3 +90,64 @@ sam(1, 2, 3, a=10, b=20, c=30)  # (1, 2, 3) {'a': 10, 'b': 20, 'c': 30}
 
 ###########################################################################################
 
+# only positional arguments
+""" 
+arguments before / must be positional arguments , arguments after / can be either 
+positional or keyword
+"""
+
+def sum_of_num(a, b, /, c):
+    print(a + b + c)
+
+sum_of_num(1, 2, 3)
+sum_of_num(1, 2, c=3)
+# sum_of_num(a=1, b=2, c=3)       # TypeError: sum_of_num() got some positional-only arguments passed as keyword arguments: 'a, b'
+
+########################################################################################
+
+# only keyword arguments
+"""
+arguments after * must be keyword only arguments, arguments before * can be either positional
+or keyword
+"""
+
+def sum_of_nums(a, *, b, c):
+    print(a + b + c)
+
+
+sum_of_nums(a=11, b=22, c=33)
+sum_of_nums(11, b=22, c=33)
+# sum_of_nums(11, 22, 33)     # TypeError: sum_of_nums() takes 1 positional argument but 3 were given
+
+########################################################################################
+
+# combination
+"""
+a, b -> only positional
+c, d -> can be either positional or keyword
+e, f -> must be keyword arguments only
+"""
+
+def sum_of_nums(a, b, /, c, d, *, e, f):
+    print(a + b + c + d + e + f)
+
+
+# sum_of_nums(1, 2, 3, 4, 5, 6)       # TypeError
+sum_of_nums(1, 2, 3, 4, e=5, f=6)
+sum_of_nums(1, 2, c=3, d=4, e=5, f=6)
+sum_of_nums(1, 2, 3, d=4, e=5, f=6)
+
+#######################################################################################
+
+
+def sum_of_nums(a, b, /, c, d=0, *, e=0, f=0):
+    print(a + b + c + d + e + f)
+
+
+sum_of_nums(1, 2, 3)
+sum_of_nums(1, 2, 3, 4, e=5, f=6)
+sum_of_nums(1, 2, c=4, e=5, f=6)
+sum_of_nums(1, 2, c=0, d=23, e=86, f=79)
+
+#######################################################################################
+
