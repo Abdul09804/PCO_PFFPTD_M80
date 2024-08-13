@@ -151,3 +151,62 @@ How are you
 
 # print(next(res))    # StopIteration
 
+###################################################################################
+
+# generate even numbers
+
+def even_gen():
+    print('Initialising generator')
+    num = 1
+    while True:
+        if num % 2 == 0:
+            yield num
+        num += 1
+
+# res = even_gen()
+# # print(list(res))
+# print(next(res))
+# print(next(res))
+# for i in range(1, 101):
+#     print(next(res))
+
+# list of names starting with vowels using generators
+
+names = ['alex', 'iqbal', 'eve', 'bob', 'clare', 'uday']
+
+def vowel_names(iterable):
+    for name in iterable:
+        if name[0] in 'aeiouAEIOU':
+            yield name
+
+res = vowel_names(names)
+print(next(res))        # alex
+print(list(res))        # ['iqbal', 'eve', 'uday']
+
+###################################################################################
+
+# create a countdown generator from 10 to 1
+
+def countdown_gen():
+    for i in range(10, 0, -1):
+        yield i
+
+res = countdown_gen()
+print(next(res))
+print(next(res))
+
+###################################################################################
+
+# generate infinite prime numbers
+
+# generate infinite fibonacci series
+
+####################################################################################
+
+
+print(max(1, 4))    # 4
+print(min(8, 6))    # 6
+
+print(ord('a'))     # 97
+print(chr(97))      # 'a'
+
