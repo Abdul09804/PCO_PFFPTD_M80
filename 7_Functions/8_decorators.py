@@ -86,3 +86,48 @@ print(b())
 <function demo at 0x000001DEF976F600>
 In demo
 """
+
+#####################################################################################
+
+def sam(func):
+    def inner():
+        print(func)
+        return func()
+
+    return inner
+
+
+def greeting():
+    return "Hello World"
+
+
+def demo():
+    return "In demo"
+
+a = sam(greeting)
+print(a())
+"""
+<function greeting at 0x000001AFC6B304A0>
+Hello World
+"""
+
+greeting = sam(greeting)
+print(greeting())
+"""
+<function greeting at 0x0000024F5B5504A0>
+Hello World
+"""
+
+print(demo())
+"""
+In demo
+"""
+
+demo = sam(demo)
+print(demo())
+"""
+<function demo at 0x000001CCF871F7E0>
+In demo
+"""
+
+
