@@ -1,28 +1,53 @@
 # decorators
 
-def sam(some_val):
-    return some_val
+# def sam(some_val):
+#     return some_val
+#
+#
+# print(sam(18))      # 18
+# print(sam("hello"))     # hello
+#
+# a = 'hello world'
+# b = sam(a)
+# print(b)
+#
+# def add(a, b):
+#     return a + b
+#
+# print(add)      # <function add at 0x00000250A190AF20>
+# print(add(3, 4))    # 7
+#
+# a = sam(add)
+# print(a)        # <function add at 0x0000016262D2AF20>
+#
+# b = add
+# print(b)        # <function add at 0x000001EADF82AF20>
+#
+# print(add(33, 44))      # 77
+# print(a(33, 44))        # 77
+# print(b(3, 4))      # 7
+
+##################################################################################
+
+def sam(a):
+    def inner():
+        print(a)
+    return inner
 
 
-print(sam(18))      # 18
-print(sam("hello"))     # hello
+li = [10, 20, 30]
+print(li)       # [10, 20, 30]
 
-a = 'hello world'
-b = sam(a)
-print(b)
+a = 10
+# print(inner())      # NameError
 
-def add(a, b):
-    return a + b
+print(sam(12))       # <function sam.<locals>.inner at 0x000001D672DCAF20>
 
-print(add)      # <function add at 0x00000250A190AF20>
-print(add(3, 4))    # 7
+sam1 = sam(100)     #
+sam2 = sam(200)     #
+print(sam1)     # <function sam.<locals>.inner at 0x000002063128AF20>
+print(sam2)     # <function sam.<locals>.inner at 0x0000026DA180F560>
 
-a = sam(add)
-print(a)        # <function add at 0x0000016262D2AF20>
+sam1()      # 100
+sam2()      # 200
 
-b = add
-print(b)        # <function add at 0x000001EADF82AF20>
-
-print(add(33, 44))      # 77
-print(a(33, 44))        # 77
-print(b(3, 4))      # 7
