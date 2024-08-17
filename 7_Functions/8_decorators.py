@@ -130,4 +130,78 @@ print(demo())
 In demo
 """
 
+##################################################################################
+# Decorator
+"""
+-> adding an extra functionality to the main function without modifying it, is 
+   known as a decorator
+-> decorator function must have a nested function 
+-> Outer function/ deorator function must take only one argument ie, address of
+   the main function
+-> nested function/ inner function/ wrapper must take the arguments that must be
+   taken by main function
+-> main function must be called inside wrapper function
+-> decorator function must return address of wrapper
+-> Syntax:
+            def deco(func):
+                def wrapper(*ars, **kwargs):
+                    PRE-TASK
+                    result = func(*args, **kwargs)
+                    POST-TASK
+                    return result
+                return wrapper
+            return wrapper
+"""
+
+def calculate(func):
+    def wrapper(x, y, z):
+        print('Calculating.....')
+        print(func)
+        result = func(x, y, z)
+        return result
+    return wrapper
+
+
+def add(a, b, c):
+    return a + b + c
+
+add = calculate(add)
+print(add)      # <function calculate.<locals>.wrapper at 0x000001045CB0FA60>
+
+print(add(1, 2, 3))     #
+
+def sub(a, b, c):
+    return a - b - c
+
+sub = calculate(sub)
+print(sub(10, 5, 3))
+
+
+###############################################################################
+
+def calculate(func):
+    def wrapper(*args, **kwargs):
+        print('Calculating.....')
+        print(func)
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+
+def add(a, b, c):
+    return a + b + c
+
+
+def sub(a, b):
+    return a - b
+
+add = calculate(add)
+sub = calculate(sub)
+
+print(add(1, 2, 3))
+print(sub(1, 2))
+
+
+
+
 
