@@ -62,26 +62,26 @@ def sam(func):
 def greeting():
     return "Hello World"
 
-print(greeting())       # Hello World
-
-a = sam(greeting)
-print(a)    # <function sam.<locals>.inner at 0x000001CFF837F560>
+# print(greeting())       # Hello World
+#
+# a = sam(greeting)
+# print(a)    # <function sam.<locals>.inner at 0x000001CFF837F560>
 
 
 def demo():
     return "In demo"
 
-b = sam(demo)
-print(b)        # <function sam.<locals>.inner at 0x0000014C36C5F6A0>
+# b = sam(demo)
+# print(b)        # <function sam.<locals>.inner at 0x0000014C36C5F6A0>
 
 
-print(a())
+# print(a())
 """
 <function greeting at 0x0000017C6AA8AF20>
 Hello World
 """
 
-print(b())
+# print(b())
 """
 <function demo at 0x000001DEF976F600>
 In demo
@@ -104,27 +104,27 @@ def greeting():
 def demo():
     return "In demo"
 
-a = sam(greeting)
-print(a())
+# a = sam(greeting)
+# print(a())
 """
 <function greeting at 0x000001AFC6B304A0>
 Hello World
 """
 
-greeting = sam(greeting)
-print(greeting())
+# greeting = sam(greeting)
+# print(greeting())
 """
 <function greeting at 0x0000024F5B5504A0>
 Hello World
 """
 
-print(demo())
+# print(demo())
 """
 In demo
 """
 
-demo = sam(demo)
-print(demo())
+# demo = sam(demo)
+# print(demo())
 """
 <function demo at 0x000001CCF871F7E0>
 In demo
@@ -165,16 +165,16 @@ def calculate(func):
 def add(a, b, c):
     return a + b + c
 
-add = calculate(add)
-print(add)      # <function calculate.<locals>.wrapper at 0x000001045CB0FA60>
+# add = calculate(add)
+# print(add)      # <function calculate.<locals>.wrapper at 0x000001045CB0FA60>
 
-print(add(1, 2, 3))     #
+# print(add(1, 2, 3))     #
 
 def sub(a, b, c):
     return a - b - c
 
-sub = calculate(sub)
-print(sub(10, 5, 3))
+# sub = calculate(sub)
+# print(sub(10, 5, 3))
 
 
 ###############################################################################
@@ -195,11 +195,11 @@ def add(a, b, c):
 def sub(a, b):
     return a - b
 
-add = calculate(add)
-sub = calculate(sub)
+# add = calculate(add)
+# sub = calculate(sub)
 
-print(add(1, 2, 3))
-print(sub(1, 2))
+# print(add(1, 2, 3))
+# print(sub(1, 2))
 
 @calculate          # add = calculate(add)
 def add(a, b, c):
@@ -209,7 +209,80 @@ def add(a, b, c):
 def sub(a, b):
     return a - b
 
-print(add(2, 3, 4))
-print(sub(10, 5))
+# print(add(2, 3, 4))
+# print(sub(10, 5))
+
+#################################################################################
+
+# 1) decorator to print the name of the function which is being executed
+
+def func_name(func):
+    def wrapper(*args, **kwargs):
+        print(f"'{func.__name__}' function will be executed")
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
 
 
+
+@func_name
+def spam():
+    return "In spam"
+
+
+# print(spam())
+
+
+@func_name
+def add(a, b, c):
+    return a + b + c
+
+# print(add(1, 2, 3))
+
+###################################################################################'
+
+# 2) decorator to delay the execution of function by 3 seconds
+
+from time import sleep
+
+def delay(func):
+    def wrapper(*args, **kwargs):
+        print(f"{func.__name__} will be executed in 3 seconds")
+        sleep(3)
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+
+@delay
+def add(a, b, c):
+    return a + b + c
+
+# print(add(2, 3, 4))
+
+################################################################################
+
+
+# 3) decorator to calculate execution time of the function
+
+from time import time
+def execution_time(func):
+    def wrapper(*args, **kwargs):
+        start = time()
+        func(*args, **kwargs)
+        end = time()
+        print(f"The time taken to execute the {func.__name__} function is {end-start} seconds")
+    return wrapper
+
+
+@execution_time
+def perfect(m, n):
+    for num in range(m, n+1):
+        sum_of_factors = 0
+        for n in range(1, num // 2 + 1):
+            if num % n == 0:
+                sum_of_factors += n
+        if sum_of_factors == num:
+            print(num)
+
+perfect(1, 20000)
