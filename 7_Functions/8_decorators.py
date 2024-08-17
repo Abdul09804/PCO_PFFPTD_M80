@@ -286,3 +286,6 @@ def perfect(m, n):
             print(num)
 
 perfect(1, 20000)
+
+# 4) WAP to count the number of arguments passed to a function
+
