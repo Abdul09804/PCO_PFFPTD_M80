@@ -201,7 +201,15 @@ sub = calculate(sub)
 print(add(1, 2, 3))
 print(sub(1, 2))
 
+@calculate          # add = calculate(add)
+def add(a, b, c):
+    return a + b + c
 
+@calculate
+def sub(a, b):
+    return a - b
 
+print(add(2, 3, 4))
+print(sub(10, 5))
 
 
