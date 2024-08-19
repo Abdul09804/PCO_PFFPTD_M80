@@ -285,7 +285,52 @@ def perfect(m, n):
         if sum_of_factors == num:
             print(num)
 
-perfect(1, 20000)
+# perfect(1, 20000)
 
 # 4) WAP to count the number of arguments passed to a function
+
+def count_args(func):
+    def wrapper(*args, **kwargs):
+        c = 0
+        for _ in args:
+            c += 1
+
+        for _ in kwargs:
+            c += 1
+        print(f"The number of arguments passed to {func.__name__} is {c}")
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+@count_args
+def sam(*args, **kwargs):
+    return args, kwargs
+
+
+print(sam(1, 2, 3))
+print(sam(1, 2, a=10, b=20))
+
+
+# decorator to count the number of positional and keyword arguments
+def count_args(func):
+    def wrapper(*args, **kwargs):
+        c1, c2 = 0, 0
+        for _ in args:
+            c1 += 1
+
+        for _ in kwargs:
+            c2 += 1
+        print(f"The number of positional arguments passed to {func.__name__} is {c1}")
+        print(f"The number of keyword arguments passed to {func.__name__} is {c2}")
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+@count_args
+def sam(*args, **kwargs):
+    return args, kwargs
+
+
+print(sam(1, 2, 3))
+print(sam(1, 2, a=10, b=20))
 
