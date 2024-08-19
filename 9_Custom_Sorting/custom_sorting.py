@@ -46,3 +46,28 @@ print(sorted(words, key=len, reverse=True))     # ['everyone', 'welcome', 'pytho
 
 #########################################################################################
 
+words = ['hello', 'everyone', 'welcome', 'to', 'python', 'class']
+def find_len(st):
+    c = 0
+    for _ in st:
+        c += 1
+    return c
+
+print(sorted(words, key=find_len))      # ['to', 'hello', 'class', 'python', 'welcome', 'everyone']
+
+######################################################################################
+
+names = ['alex', 'mary', 'anthony', 'steve', 'stella', 'eve', 'john', 'amar']
+
+def first_char(st):
+    return st[0]
+
+
+print(sorted(names))
+print(sorted(names, key=first_char))
+print(sorted(names, key=lambda st: st[0]))
+"""
+['alex', 'amar', 'anthony', 'eve', 'john', 'mary', 'stella', 'steve']
+['alex', 'anthony', 'amar', 'eve', 'john', 'mary', 'steve', 'stella']
+['alex', 'anthony', 'amar', 'eve', 'john', 'mary', 'steve', 'stella']
+"""
