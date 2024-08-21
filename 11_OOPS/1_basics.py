@@ -122,3 +122,34 @@ print(p1.__dict__)      # {}
 print(dir(p2))
 print(p2.__dict__)      # {}
 
+# accessing the values
+
+print(Point.x)      # 10
+print(Point.y)      # 20
+print(p1.x)         # 10
+print(p2.y)         # 20
+
+# modifying the values wrt class
+""" 
+modification wrt class will change the class as well as object created for
+the class
+"""
+Point.x = 100
+print(Point.x)      # 100
+print(p1.x)         # 100
+print(p2.x)         # 100
+
+# modifying the values wrt object
+"""
+modification wrt object will change only that particular object but not other objects
+or the class
+"""
+print(p1.__dict__)      # {}
+p1.x = 11
+print(p1.__dict__)      # {'x': 11}
+print(p1.x)     # 11
+print(p2.x)     # 100
+print(Point.x)  # 100
+
+###################################################################################
+
