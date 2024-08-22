@@ -221,5 +221,41 @@ st2.marks = 97
 st2.phno = 9292929292
 
 
+###################################################################################
 
+# Constructor Method or Initialisation Method
+"""
+-> __init__
+-> we use constructor to initialise the members of the object 
+-> we can reduce the number of instructions 
+-> control will invoke this method by default during object creation, we need 
+   not have to call it separately
+-> self will store the address of the object
+"""
 
+li = [10, 20, 30]
+li.append(87)
+print(li)
+list.append(li, 90)
+print(li)   # [10, 20, 30, 87, 90]
+
+class Company:
+    Comp_name = "ABC"
+    Comp_loc = "Bengaluru"
+    Comp_CEO = "Mr.Ram"
+
+    def __init__(self, emp_name, emp_id, emp_sal):
+        self.emp_name = emp_name
+        self.emp_id = emp_id
+        self.emp_sal = emp_sal
+
+emp1 = Company("Mary", "ABC123", 30000)
+emp2 = Company("John", "ABC234", 25000)
+
+print(dir(Company))
+print(dir(emp1))
+print(dir(emp2))
+
+print(Company.__dict__)
+print(emp1.__dict__)
+print(emp2.__dict__)
