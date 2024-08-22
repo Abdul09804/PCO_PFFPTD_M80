@@ -259,3 +259,16 @@ print(dir(emp2))
 print(Company.__dict__)
 print(emp1.__dict__)
 print(emp2.__dict__)
+
+# create a class called hospital with 4 class members and 4 object members
+# create a class of your own choice with 4 class members and 4 object members
+
+"""
+dir(cls) -> The properties and functionalities derived from object class the
+            functions ands an variables created inside the class
+dir(obj) -> The properties derived from user defined class and object members
+cls.__dict__ -> thr information about class variables and members/ functions created
+                inside the class
+obj._dict__ -> information about data present in object / object member
+"""
+
