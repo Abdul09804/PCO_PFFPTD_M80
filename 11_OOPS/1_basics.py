@@ -153,3 +153,55 @@ print(Point.x)  # 100
 
 ###################################################################################
 
+"""
+Generic Members or Class Members
+-> These are the members which are common for each and every object created for
+   the class.
+-> These members are created inside the class
+-> Class Variables
+
+Specific Members or Object Members
+-> These members will be different for different objects
+"""
+
+class Company:
+    Comp_name = "ABC"
+    Comp_loc = "Bengaluru"
+    Comp_CEO = "Mr.Ram"
+
+
+emp1 = Company()
+emp2 = Company()
+
+print(Company)      # <class '__main__.Company'>
+print(emp1)         # <__main__.Company object at 0x000001BF5CB246D0>
+print(emp2)         # <__main__.Company object at 0x000001BF5CB24710>
+
+print(dir(Company))
+print(dir(emp1))
+print(dir(emp2))
+
+print(Company.__dict__)     # 'Comp_name': 'ABC', 'Comp_loc': 'Bengaluru', 'Comp_CEO': 'Mr.Ram'
+print(emp1.__dict__)        # {}
+print(emp2.__dict__)        # {}
+
+emp1.name = "John"
+emp1.emp_id = "ABC123"
+emp1.salary = 60000
+
+emp2.name = "Mary"
+emp2.emp_id = "ABC124"
+emp2.salary = 80000
+
+print(dir(Company))     # 'Comp_CEO', 'Comp_loc', 'Comp_name'
+print(dir(emp1))        # 'Comp_CEO', 'Comp_loc', 'Comp_name', 'emp_id', 'name', 'salary'
+print(dir(emp2))        # 'Comp_CEO', 'Comp_loc', 'Comp_name', 'emp_id', 'name', 'salary'
+
+print(Company.__dict__)     # 'Comp_name': 'ABC', 'Comp_loc': 'Bengaluru', 'Comp_CEO': 'Mr.Ram'
+print(emp1.__dict__)        # {'name': 'John', 'emp_id': 'ABC123', 'salary': 60000}
+print(emp2.__dict__)        # {'name': 'Mary', 'emp_id': 'ABC124', 'salary': 80000}
+
+
+
+
+
