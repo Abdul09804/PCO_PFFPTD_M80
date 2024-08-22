@@ -202,6 +202,24 @@ print(emp1.__dict__)        # {'name': 'John', 'emp_id': 'ABC123', 'salary': 600
 print(emp2.__dict__)        # {'name': 'Mary', 'emp_id': 'ABC124', 'salary': 80000}
 
 
+# create a class of your own choice with 3 class members and 3 object members
+
+class School:
+    school_name = "Indus Valley"
+    school_principal = "Mr.Ram"
+    school_location = "Rajajinagar"
+
+st1 = School()
+st2 = School()
+
+st1.name = "Milana"
+st1.marks = 98
+st1.phno = 9191919191
+
+st2.name = "Akash"
+st2.marks = 97
+st2.phno = 9292929292
+
 
 
 
