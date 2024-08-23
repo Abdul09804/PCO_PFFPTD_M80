@@ -52,3 +52,23 @@ p2.reset(4)
 print(p1.__dict__)
 print(p2.__dict__)
 
+###############################################################################
+
+class Calculator:
+    def add(self, a, b):
+        if type(a) == int and type(b)== int:
+            return a + b
+        raise Exception ("Only integers can be added")
+
+    def sub(self, a, b):
+        if type(a) == int and type(b) == int:
+            return a - b
+        raise Exception
+
+    def mul(self, a, b):
+        return a * b
+
+c1 = Calculator()
+# print(c1.add(9, 7))
+print(c1.mul('hai', 2))
+# print(c1.mul('hai', 'hai'))     # TypeError
