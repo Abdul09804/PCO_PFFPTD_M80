@@ -31,13 +31,78 @@ class Company:
         print(f"Main Branch : {cls.main_branch}")
         print(f"Other Branches : {cls.other_branches}")
 
+    def details(self):
+        print(f"Name : {self.emp_name}")
+        print(f"Employee ID : {self.emp_id}")
+        print(f"Designation : {self.designation}")
+        print(f"Branch : {self.branch}")
+
 emp1 = Company("Amar", "TY123", "Bengaluru", "Test Engineer")
 emp2 = Company("Akbar", "TY124", "Mumbai", "Developer")
 emp3 = Company("Anthony", "TY125", "Chennai", "Team Lead")
 emp4 = Company("Alex", "TY130", "Bengaluru", "Manager")
 emp5 = Company("Akhil", "TY145", "Delhi", "Developer")
 
-Company.comp_details()
-Company.display_branches()
-emp2.display_branches()
+# Company.comp_details()
+# Company.display_branches()
+# emp2.display_branches()
 
+emp1.details()
+# Company.details()
+
+
+################################################################################
+
+# static method
+"""
+-> Static method neither belong to class nor object but acts as a supporting method 
+   to both class and objects
+-> passing self or cls is not mandatory
+-> We make use of a decorator called static method
+"""
+
+class Bank:
+    Bank_name = "SBI"
+    Branch = "HSR"
+    ref_acc_no = 123456780000
+    def __init__(self, name, age, balance):
+        self.name = name
+        self.age = age
+        self.balance = balance
+        self.acc_no = self.create_acc_no()
+
+    @staticmethod
+    def create_acc_no():
+        Bank.ref_acc_no += 1
+        return Bank.ref_acc_no
+
+
+acc1 = Bank("John", 28, 30000)
+acc2 = Bank("Mary", 30, 40000)
+
+print(acc1.__dict__)
+print(acc2.__dict__)
+
+###############################################################################
+
+class Calculator:
+    @staticmethod
+    def add(num1, num2):
+        return num1 + num2
+
+    @staticmethod
+    def sub(num1, num2):
+        return num1 - num2
+
+    @staticmethod
+    def mul(num1, num2):
+        return num1 * num2
+
+    @staticmethod
+    def div(num1, num2):
+        return num1 / num2
+
+
+print(Calculator.add(3, 4))
+c1 = Calculator()
+print(c1.div(3, 7))
