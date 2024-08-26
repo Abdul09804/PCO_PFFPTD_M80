@@ -37,5 +37,37 @@ Single Level Inheritance
                 SB
 """
 
+# class A:
+#     pass
+#
+# print(dir(A))
+
+class demo:
+    a = 11
+    b = 22
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+
+class child_demo(demo):
+    pass
+
+print(dir(demo))
+print(demo.__dict__)    # 'a': 11, 'b': 22
+
+print(dir(child_demo))  # same as that of demo
+print(child_demo.__dict__)
+
+obj1 = child_demo(3, 4)
+print(obj1.__dict__)    # {'x': 3, 'y': 4}
+print(dir(obj1))        # a, b, x, y
+
+obj2 = demo(30, 40)
+print(obj2.__dict__)    # {'x': 30, 'y': 40}
+print(dir(obj2))        # 'a', 'b', 'x', 'y'
+
+
 
 
