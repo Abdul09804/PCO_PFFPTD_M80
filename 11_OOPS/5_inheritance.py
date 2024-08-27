@@ -42,31 +42,31 @@ Single Level Inheritance
 #
 # print(dir(A))
 
-class demo:
-    a = 11
-    b = 22
-
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-
-class child_demo(demo):
-    pass
-
-print(dir(demo))
-print(demo.__dict__)    # 'a': 11, 'b': 22
-
-print(dir(child_demo))  # same as that of demo
-print(child_demo.__dict__)
-
-obj1 = child_demo(3, 4)
-print(obj1.__dict__)    # {'x': 3, 'y': 4}
-print(dir(obj1))        # a, b, x, y
-
-obj2 = demo(30, 40)
-print(obj2.__dict__)    # {'x': 30, 'y': 40}
-print(dir(obj2))        # 'a', 'b', 'x', 'y'
+# class demo:
+#     a = 11
+#     b = 22
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#
+# class child_demo(demo):
+#     pass
+#
+# print(dir(demo))
+# print(demo.__dict__)    # 'a': 11, 'b': 22
+#
+# print(dir(child_demo))  # same as that of demo
+# print(child_demo.__dict__)
+#
+# obj1 = child_demo(3, 4)
+# print(obj1.__dict__)    # {'x': 3, 'y': 4}
+# print(dir(obj1))        # a, b, x, y
+#
+# obj2 = demo(30, 40)
+# print(obj2.__dict__)    # {'x': 30, 'y': 40}
+# print(dir(obj2))        # 'a', 'b', 'x', 'y'
 
 ##############################################################################
 
@@ -88,11 +88,11 @@ class Demo1(Demo):
         print("Demo1.google", self.value)
 
 
-obj1 = Demo(11)
-obj2 = Demo1(22)
-
-print(dir(Demo))        # 'apple', 'yahoo'
-print(Demo.__dict__)    # 'apple', 'yahoo'
+# obj1 = Demo(11)
+# obj2 = Demo1(22)
+#
+# print(dir(Demo))        # 'apple', 'yahoo'
+# print(Demo.__dict__)    # 'apple', 'yahoo'
 
 # print(dir(Demo1))       # 'apple', 'google', 'yahoo'
 # print(Demo1.__dict__)   # 'google'
@@ -175,12 +175,204 @@ class Demo1(Demo):
         # super().yahoo()
         Demo.yahoo(self)
 
-obj1 = Demo(10)
-obj2 = Demo1(11, 22)
-
-obj1.yahoo()        # Demo.yahoo 10
-obj2.yahoo()
+# obj1 = Demo(10)
+# obj2 = Demo1(11, 22)
+#
+# obj1.yahoo()        # Demo.yahoo 10
+# obj2.yahoo()
 """
 Demo1.yahoo 22
 Demo.yahoo 11
 """
+
+# create a class of your own choice and demonstrate single level inheritance
+#################################################################################
+
+# Multi Level Inheritance
+"""
+-> Here, we inherit the properties from one class to another class by
+   considering multiple levels
+-> The last derived class will have the properties from all the previous classes
+-> Syntax:
+            class C1:
+                SB
+            class C2(C1):
+                SB
+            .
+            .
+            class Cn(Cn-1):
+                SB
+"""
+
+# class A:
+#     a = 10
+#     b = 20
+#     def __init__(self, p, q):
+#         self.p = p
+#         self.q = q
+#
+#
+# class B(A):
+#     m = 30
+#     n = 40
+#
+# class C(B):
+#     x = 100
+#
+#
+# print(dir(A))       # 'a', 'b'
+# print(dir(B))       # 'a', 'b', 'm', 'n'
+# print(dir(C))       # 'a', 'b', 'm', 'n', 'x'
+#
+# obj1 = C(7, 8)
+#
+# print(dir(obj1))    # 'a', 'b', 'm', 'n', 'p', 'q', 'x'
+#
+# print(C.__dict__)   # 'x': 100
+# print(obj1.__dict__)    # {'p': 7, 'q': 8}
+
+################################################################################
+
+class A:
+    def demo(self):
+        print('A')
+
+class B(A):
+    def demo(self):
+        super().demo()
+        print('B')
+
+class C(B):
+    def demo(self):
+        print('C')
+        super().demo()
+
+
+# obj1 = C()
+# obj1.demo()     # C A B
+
+# create a class of your own choice and demonstrate multi level inheritance
+
+###################################################################################
+
+# Multiple Inheritance
+"""
+-> Here we inherit the properties from multiple parent class to single child class
+-> Syntax:
+            class PC1:
+                SB
+            class PC2:
+                SB
+            .
+            .
+            class PCn:
+                SB
+            class CC(PC1, PC2, ......, PCn):
+                SB
+"""
+
+# class A:
+#     a = 10
+#     b = 20
+#
+# class B:
+#     p = 30
+#     q = 40
+#
+# class C:
+#     a = 50
+#     m = 60
+#     n = 70
+#
+# class CC(A, B, C):
+#     x = 80
+#     y = 90
+#
+# obj1 = CC()
+# print(dir(CC))      # 'a', 'b', 'm', 'n', 'p', 'q', 'x', 'y'
+#
+# print(obj1.a)       # 10
+
+#######################################################################################
+
+class A:
+    def demo(self):
+        print('A')
+
+class B:
+    def demo(self):
+        print('B')
+
+class C:
+    def demo(self):
+        print('C')
+
+class CC(A, B, C):
+    pass
+
+obj1 = CC()
+obj1.demo()     # A
+
+####################################################################################
+
+class A:
+    def demo(self):
+        print('A')
+
+class B:
+    def demo(self):
+        print('B')
+
+class C:
+    def demo(self):
+        print('C')
+
+class CC(A, B, C):
+    def demo(self):
+        print('CC')
+
+
+obj1 = CC()
+obj1.demo()     # CC
+
+##########################################################################################
+
+class A:
+    def demo(self):
+        print('A')
+
+class B:
+    def demo(self):
+        print('B')
+
+class C:
+    def demo(self):
+        print('C')
+
+class CC(A, B, C):
+    def demo(self):
+        print('CC')
+        # super().demo()      # CC A
+        B.demo(self)        # CC B
+
+obj1 = CC()
+obj1.demo()
+
+# method resolution order -> attribute lookups
+print(obj1.__class__.__mro__)       # (<class '__main__.CC'>, <class '__main__.A'>, <class '__main__.B'>, <class '__main__.C'>, <class 'object'>)
+
+print(CC.__mro__)       # CC -> A -> B -> C -> object class
+
+
+################################################################################
+
+"""
+Create a class called calculator, to this method inherit the properties from
+ADD, SUB, MUL and DIV classes where add, sub, mul, div are static methods 
+respectively
+"""
+
+
+
+
+
