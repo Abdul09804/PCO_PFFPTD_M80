@@ -87,6 +87,7 @@ class Demo1(Demo):
     def google(self):
         print("Demo1.google", self.value)
 
+
 obj1 = Demo(11)
 obj2 = Demo1(22)
 
@@ -101,3 +102,85 @@ print(Demo.__dict__)    # 'apple', 'yahoo'
 #
 # print(dir(obj2))        # 'apple', 'google', 'value', 'yahoo'
 # print(obj2.__dict__)    # {'value': 22}
+
+###############################################################################
+
+# child and parent has same properties
+
+class Demo:
+    def __init__(self, value):
+        self.value = value
+
+    def apple(self):
+        print("Demo.apple", self.value)
+
+    def yahoo(self):
+        print("Demo.yahoo", self.value)
+
+class Demo1(Demo):
+    def yahoo(self):
+        print("Demo1.yahoo", self.value)
+
+
+# obj1 = Demo(22)
+# obj2 = Demo1(33)
+#
+# print(dir(Demo))
+# print(dir(Demo1))
+#
+# print(Demo.__dict__)        # apple, yahoo
+# print(Demo1.__dict__)       # yahoo
+#
+# obj1.yahoo()        # Demo.yahoo 22
+# obj2.yahoo()        # Demo1.yahoo 33
+
+###############################################################################################
+
+"""
+-> Suppose you override a parent method in child class but still want to use it
+   in child class, we make use of chaining
+-> Constructor Chaining
+    - Here we invoke the constructor method of parent class by being there in 
+      constructor of child class
+    - Syntax:
+            super().__init__(args)
+            parentclassname.__init__(self/obj, args)
+            
+-> Method Chaining
+    - Here, we invoke the method of parent class by being there in method of 
+      child class
+    - Syntax:
+            super().mname(args)
+            parentclassname.mname(self/obj, args)
+"""
+
+class Demo:
+    def __init__(self, value):
+        self.value = value
+
+    def apple(self):
+        print("Demo.apple", self.value)
+
+    def yahoo(self):
+        print("Demo.yahoo", self.value)
+
+
+class Demo1(Demo):
+    def __init__(self, value, extra_value):
+        self.extra_value = extra_value
+        # super().__init__(value)
+        Demo.__init__(self, value)
+    def yahoo(self):
+        print("Demo1.yahoo", self.extra_value)
+        # super().yahoo()
+        Demo.yahoo(self)
+
+obj1 = Demo(10)
+obj2 = Demo1(11, 22)
+
+obj1.yahoo()        # Demo.yahoo 10
+obj2.yahoo()
+"""
+Demo1.yahoo 22
+Demo.yahoo 11
+"""
