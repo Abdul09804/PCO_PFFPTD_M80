@@ -311,3 +311,11 @@ __getattr__ will be called only if attribute is not present or if __getattribute
 is not explicitly mentioned
 """
 
+##############################################################################
+
+"""
+1) create a class called employee
+-> make the salary of the employee inaccessible
+-> make the attributes immutable
+-> class should not be able to add a new object member or modify the existing
+"""
