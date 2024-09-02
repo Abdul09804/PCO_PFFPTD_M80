@@ -196,9 +196,118 @@ class Employee:
         raise KeyError
 
 
-emp1 = Employee("John", 34, 9191919191)
-emp2 = Employee("Mary", 35, 9292929292)
+# emp1 = Employee("John", 34, 9191919191)
+# emp2 = Employee("Mary", 35, 9292929292)
+#
+# print(emp1['name'])
+# print(emp2['phone_no'])
 
-print(emp1['name'])
-print(emp2['phone_no'])
+#################################################################################
+
+# 4) Attribute Protocol
+"""
+__getattribute__
+__setattr__
+__delattr__
+"""
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __getattribute__(self, item):
+        # return self.item
+        return "In get attribute"
+
+
+# p1 = Point(4, 3)
+# print(p1.x)
+# print(p1.z)
+# print(p1.spam)
+
+###############################################################################
+
+# point class to take only positive values
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __setattr__(self, key, value):
+        if value < 0:
+            raise ValueError ("Value can not be less than 0")
+        super().__setattr__(key, value)
+
+
+# p1 = Point(-3, 90)      # ValueError: Value can not be less than 0
+# p1 = Point(3, 98)
+# print(p1.__dict__)
+
+###############################################################################
+
+# make the attributes as immutable
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __setattr__(self, key, value):
+        if key not in self.__dict__:
+            super().__setattr__(key, value)
+        else:
+            raise ValueError("Values can not be modified")
+
+
+# p1 = Point(4, 3)
+# p1.z = 5
+# print(p1.__dict__)      # {'x': 4, 'y': 3, 'z': 5}
+
+# p1.z = 3        # ValueError: Values can not be modified
+
+##############################################################################
+
+# should not be able to add a new object member or delete a object member
+
+class Point:
+    def __init__(self, x, y):
+        # self.x = x
+        # self.y = y
+        """This doesn't work because self.x = x redirects to __setattr__,
+        so chain it with __setattr__ of object method"""
+        super().__setattr__("x", x)
+        super().__setattr__("y", y)
+
+    def __setattr__(self, key, value):
+        raise AttributeError ("Values can not be modified or added")
+
+    def __delitem__(self, key):
+        raise AttributeError ("Object members can not be deleted")
+
+
+# p1 = Point(4, 5)
+# print(p1.x)
+# p1.x = 57           # AttributeError: Values can not be modified or added
+
+###############################################################################
+
+class Point:
+    def __init__(self, x):
+        self.x = x
+
+    # def __getattribute__(self, item):
+    #     return "In get attribute"
+
+    def __getattr__(self, item):
+        return "In get attr"
+
+
+p1 =  Point(4)
+print(p1.x)
+print(p1.y)
+"""
+__getattr__ will be called only if attribute is not present or if __getattribute__
+is not explicitly mentioned
+"""
 
