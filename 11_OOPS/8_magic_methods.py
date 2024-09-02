@@ -122,59 +122,83 @@ class Employee:
 # print(dir(str))
 # print(dir(list))
 
-class Point:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+# class Point:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#     def __len__(self):
+#         # return 2
+#         return len(self.__dict__)
+#
+#     def __contains__(self, item):
+#         # if self.x == item or self.y == item:
+#         #     return True
+#         # return False
+#         return item in p1.__dict__.values()
+#
+#     def __getitem__(self, item):
+#         if item == 0:
+#             return self.x
+#         elif item == 1:
+#             return self.y
+#         else:
+#             raise IndexError
+#
+#     def __setitem__(self, key, value):
+#         if key == 0:
+#             self.x = value
+#         elif key == 1:
+#             self.y = value
+#         else:
+#             raise IndexError
+#
+#     def __delitem__(self, key):
+#         if key == 0:
+#             del self.x
+#         elif key == 1:
+#             del self.y
+#         else:
+#             raise IndexError
+#
+#
+# p1 = Point(4, 7)
+# print(len(p1))
+#
+# print(7 in p1)
+# print(p1.__dict__)
+#
+# print(p1[0])    #
+# # print(p1[3])        # IndexError
+#
+# p1[0] = 8
+# print(p1.__dict__)
+#
+# del p1[0]
+# print(p1.__dict__)
+#
+# print(len(p1))
 
-    def __len__(self):
-        # return 2
-        return len(self.__dict__)
+# d = {'name': "John", "age": 40, "phone_no": 9191919191}
+# print(d['phone_no'])
 
-    def __contains__(self, item):
-        # if self.x == item or self.y == item:
-        #     return True
-        # return False
-        return item in p1.__dict__.values()
+#################################################################################
+
+class Employee:
+    def __init__(self, name, age, phone_no):
+        self.name = name
+        self.age = age
+        self.phone_no = phone_no
 
     def __getitem__(self, item):
-        if item == 0:
-            return self.x
-        elif item == 1:
-            return self.y
-        else:
-            raise IndexError
-
-    def __setitem__(self, key, value):
-        if key == 0:
-            self.x = value
-        elif key == 1:
-            self.y = value
-        else:
-            raise IndexError
-
-    def __delitem__(self, key):
-        if key == 0:
-            del self.x
-        elif key == 1:
-            del self.y
-        else:
-            raise IndexError
+        if item in self.__dict__:
+            return self.__dict__[item]
+        raise KeyError
 
 
-p1 = Point(4, 7)
-print(len(p1))
+emp1 = Employee("John", 34, 9191919191)
+emp2 = Employee("Mary", 35, 9292929292)
 
-print(7 in p1)
-print(p1.__dict__)
+print(emp1['name'])
+print(emp2['phone_no'])
 
-print(p1[0])    #
-# print(p1[3])        # IndexError
-
-p1[0] = 8
-print(p1.__dict__)
-
-del p1[0]
-print(p1.__dict__)
-
-print(len(p1))
