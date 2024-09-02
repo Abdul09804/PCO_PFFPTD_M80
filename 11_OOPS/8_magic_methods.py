@@ -36,11 +36,11 @@ class Point:
         return abs(self.b - other.b)
 
 
-p1 = Point(4, 2)
-p2 = Point(8, 7)
-
-print(p1 + p2)
-print(p1 - p2)      # 5
+# p1 = Point(4, 2)
+# p2 = Point(8, 7)
+#
+# print(p1 + p2)
+# print(p1 - p2)      # 5
 
 # create a class of your choice and implement all the number protocols
 
@@ -83,14 +83,98 @@ class Employee:
 
 
 
-emp1 = Employee("John", 34, 30000)
-emp2 = Employee("Mary", 34, 40000)
-
-print(emp1 < emp2)
-print(emp1 == emp2)
+# emp1 = Employee("John", 34, 30000)
+# emp2 = Employee("Mary", 34, 40000)
+#
+# print(emp1 < emp2)
+# print(emp1 == emp2)
 
 # create a class of your own choice and implement comparison protocol
 
+##################################################################################
+
+# 3) container protocol
+
+# st = 'hello'
+# print('e' in st)      # True
+# print(st.__contains__('e'))     # True
+#
+# print(len(st))
+# print(st.__len__())
+#
+# print(st[2])
+# print(st.__getitem__(2))
+#
+# # st[2] = 'L'     # TypeError
+#
+# li = [1, 2, 3]
+# li[1] = 20
+# print(li)       # [1, 20, 3]
+# li.__setitem__(0, 100)
+# print(li)       # [100, 20, 3]
+#
+# del li[0]
+# print(li)       # [20, 3]
+#
+# li.__delitem__(1)
+# print(li)       # [20]
+
+# print(dir(str))
+# print(dir(list))
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __len__(self):
+        # return 2
+        return len(self.__dict__)
+
+    def __contains__(self, item):
+        # if self.x == item or self.y == item:
+        #     return True
+        # return False
+        return item in p1.__dict__.values()
+
+    def __getitem__(self, item):
+        if item == 0:
+            return self.x
+        elif item == 1:
+            return self.y
+        else:
+            raise IndexError
+
+    def __setitem__(self, key, value):
+        if key == 0:
+            self.x = value
+        elif key == 1:
+            self.y = value
+        else:
+            raise IndexError
+
+    def __delitem__(self, key):
+        if key == 0:
+            del self.x
+        elif key == 1:
+            del self.y
+        else:
+            raise IndexError
 
 
+p1 = Point(4, 7)
+print(len(p1))
 
+print(7 in p1)
+print(p1.__dict__)
+
+print(p1[0])    #
+# print(p1[3])        # IndexError
+
+p1[0] = 8
+print(p1.__dict__)
+
+del p1[0]
+print(p1.__dict__)
+
+print(len(p1))
