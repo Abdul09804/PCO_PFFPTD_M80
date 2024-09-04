@@ -133,12 +133,35 @@ Festival Week
 #     print(file.read(14))
 #     print(file.read(5))
 
-with open(sample_path) as file:
-    print(file.tell())      # 0
-    print(file.read(5))
-    print(file.tell())
-    print(file.seek(0))
-    print(file.read(10))
-    print(file.seek(3))
-    print(file.read(10))
+# with open(sample_path) as file:
+#     print(file.tell())      # 0
+#     print(file.read(5))
+#     print(file.tell())
+#     print(file.seek(0))
+#     print(file.read(10))
+#     print(file.seek(3))
+#     print(file.read(10))
 
+# 2) readline - used to read one line at a time
+
+# with open(sample_path) as file:
+#     print(file.readline())
+#     print(file.readline())
+#     print(file.readline(5))
+#     print(file.readline(10))
+#     print(file.readline())
+
+# 3) readlines - used to read entire file in the form of list of strings
+
+# with open(sample_path) as file:
+#     print(file.readlines())
+
+
+# for loop
+
+with open(sample_path) as file:
+    for line in file:
+        print(line)
+    file.seek(0)
+    for line in file:
+        print(line)
