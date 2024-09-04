@@ -108,3 +108,37 @@ sample_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_M80\10_File_Handling\sam
 # print(file_obj.closed)          # False
 # file_obj.close()
 # print(file_obj.closed)          # True
+
+#################################################################################
+
+# read from a file - read, readline, readlines
+
+# 1) read
+
+# with open(sample_path) as file:
+#     data = file.read()
+#     print(data)
+#     print(type(data))
+"""
+Hello Everyone
+Good morning
+How are you
+It's a long weekend
+Festival Week
+<class 'str'>
+"""
+
+# with open(sample_path) as file:
+#     print(file.read(5))
+#     print(file.read(14))
+#     print(file.read(5))
+
+with open(sample_path) as file:
+    print(file.tell())      # 0
+    print(file.read(5))
+    print(file.tell())
+    print(file.seek(0))
+    print(file.read(10))
+    print(file.seek(3))
+    print(file.read(10))
+
