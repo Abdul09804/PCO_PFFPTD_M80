@@ -193,4 +193,37 @@ w+ -> write and read
 r+ -> read and append
 """
 
+###################################################################################
+
+# count the number of lines in sample.log
+
+sample_log_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_M80\10_File_Handling\sample.log"
+
+with open(sample_log_path) as file:
+    count = 0
+    for line in file:
+        count += 1
+    print(count)
+
+# count the number of non-blank lines
+
+with open(sample_log_path) as file:
+    count = 0
+    for line in file:
+        if line.strip():
+            count += 1
+    print(count)
+
+# count the blank line
+
+with open(sample_log_path) as file:
+    count = 0
+    for line in file:
+        if not(line.strip()):
+            count += 1
+    print(count)
+
+
+################################################################################
+
 
