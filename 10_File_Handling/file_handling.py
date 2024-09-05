@@ -226,4 +226,117 @@ with open(sample_log_path) as file:
 
 ################################################################################
 
+# capture all the messages in sample.log
+
+with open(sample_log_path) as file:
+    messages = []
+    for line in file:
+        if line.strip():
+            words = line.split()
+            if words[2] not in messages:
+                messages.append(words[2])
+    print(messages)     # ['INFO', 'TRACE', 'WARNING', 'EVENT']
+
+
+# create a dictionary of messages and their occurrences in sample.log
+
+with open(sample_log_path) as file:
+    messages = {}
+    for line in file:
+        if line.strip():
+            message = line.split()[2]
+            if message not in messages:
+                messages[message] = 1
+            else:
+                messages[message] += 1
+    print(messages)
+
+################################################################################
+
+# capture all the ip addresses from access-log file
+
+access_log_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_M80\10_File_Handling\access-log.txt"
+
+with open(access_log_path) as file:
+    ip_addresses = []
+    for line in file:
+        if line.strip():
+            ip = line.split()[0]
+            if ip not in ip_addresses:
+                ip_addresses.append(ip)
+    print(ip_addresses)
+
+
+# count the number of occurrences of each ip address
+
+with open(access_log_path) as file:
+    ip_addresses = {}
+    for line in file:
+        if line.strip():
+            ip = line.split()[0]
+            if ip not in ip_addresses:
+                ip_addresses[ip] = 1
+            else:
+                ip_addresses[ip] += 1
+    print(ip_addresses)
+
+# write all the unique ips to unique.txt
+
+file_obj = open(access_log_path)
+unique_ips = {line.split()[0] for line in file_obj if line.strip()}
+print(unique_ips)
+file_obj.close()
+
+with open("unique.txt", 'w+') as file:
+    for ip in unique_ips:
+        file.write(ip + '\n')
+    file.seek(0)
+    print(file.read())
+
+###############################################################################
+
+# count the number of words in sample.txt
+
+with open(sample_path) as file:
+    count = 0
+    for line in file:
+        if line.strip():
+            words = line.split()
+            count += len(words)
+    print(count)
+
+#################################################################################
+
+# get the list of all countries from football.txt
+
+football_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_M80\10_File_Handling\football.txt"
+
+with open(football_path, encoding="UTF-8") as file:
+    countries = []
+    next(file)          # skip the first line
+    for line in file:
+        if line.strip():
+            country = line.split('\t')[1]
+            if country not in countries:
+                countries.append(country)
+    print(countries)
+
+
+# group the country with their group names
+
+with open(football_path, encoding="UTF-8") as file:
+    groups = {}
+    file.readline()
+    for line in file:
+        if line.strip():
+            data = line.split('\t')
+            group, country = data[0], data[1]
+            if group not in groups:
+                groups[group] = {country}
+            else:
+                groups[group].add(country)
+    print(groups)
+
+
+
 
