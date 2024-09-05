@@ -159,9 +159,38 @@ Festival Week
 
 # for loop
 
-with open(sample_path) as file:
-    for line in file:
-        print(line)
-    file.seek(0)
-    for line in file:
-        print(line)
+# with open(sample_path) as file:
+#     for line in file:
+#         print(line)
+#     file.seek(0)
+#     for line in file:
+#         print(line)
+
+
+##############################################################################
+
+# writing into a file -> write(data), writelines(data)
+
+# with open("sample1.txt", 'w') as file:
+#     print(file.write("Hello\n"))            # 6
+#     print(file.write("Good morning\n"))     # 13
+#     print(file.writelines(["Tomorrow is a holiday\n", "It's a long weekend\n"]))   # None
+
+# with open("sample1.txt", 'a') as file:
+#     print(file.write("Hello\n"))  # 6
+#     print(file.write("Good morning\n"))  # 13
+#     print(file.writelines(["Tomorrow is a holiday\n", "It's a long weekend\n"]))
+
+# with open("sample5.txt", "x") as file:
+#     print(file.write("Hello\n"))  # 6
+#     print(file.write("Good morning\n"))  # 13
+#     print(file.writelines(["Tomoorrow is a holiday\n", "It's a long weekend\n"]))
+
+#####################################################################################
+
+"""
+w+ -> write and read
+r+ -> read and append
+"""
+
+
