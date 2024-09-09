@@ -12,12 +12,12 @@ example_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_M80\12_CSV_File_Handlin
 """
 
 # Reader
-with open(example_path) as file:
-    reader_obj = csv.reader(file)
-    print(reader_obj)
-    next(reader_obj)
-    for line in reader_obj:
-        print(line)
+# with open(example_path) as file:
+#     reader_obj = csv.reader(file)
+#     print(reader_obj)
+#     next(reader_obj)
+#     for line in reader_obj:
+#         print(line)
 
 """
 ['John', 'TY123', 'Bengaluru']
@@ -30,10 +30,10 @@ with open(example_path) as file:
 
 # DictReader
 
-with open(example_path) as file:
-    reader_obj = csv.DictReader(file)
-    for data in reader_obj:
-        print(data)
+# with open(example_path) as file:
+#     reader_obj = csv.DictReader(file)
+#     for data in reader_obj:
+#         print(data)
 
 """
 {'name': 'John', 'emp_id': 'TY123', 'place': 'Bengaluru'}
@@ -62,17 +62,114 @@ with open(example_path) as file:
 """
 
 # writer
-path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_M80\12_CSV_File_Handling\sample.csv"
+# path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_M80\12_CSV_File_Handling\sample.csv"
+#
+# with open(path, 'w') as file:
+#     writer_obj = csv.writer(file)
+#     data = ['name', 'phno', 'salary']
+#     writer_obj.writerow(data)
+#     writer_obj.writerows([
+#         ['Ram', '9191919191', '70000'],
+#         ['Sita', '9292929292', '60000'],
+#         ['Lakshman', '9393939393', '650000']
+#     ])
 
-with open(path, 'w') as file:
-    writer_obj = csv.writer(file)
-    data = ['name', 'phno', 'salary']
-    writer_obj.writerow(data)
-    writer_obj.writerows([
-        ['Ram', '9191919191', '70000'],
-        ['Sita', '9292929292', '60000'],
-        ['Lakshman', '9393939393', '650000']
-    ])
+# DictWriter
+
+# path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_M80\12_CSV_File_Handling\sample1.csv"
+#
+# with open(path, 'w') as file:
+#     writer_obj = csv.DictWriter(file, ['name', 'phno'])
+#     writer_obj.writeheader()
+#     writer_obj.writerow({'name': "Ram", "phno": '9191919191'})
+#     writer_obj.writerows([
+#         {'name': "Sita", "phno": '9292929292'},
+#         {"name": "Laxman", "phno": '9393939393'}
+#     ])
+
+###############################################################################
+
+# print the names from employees.csv in the form of list
+
+employees_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_M80\12_CSV_File_Handling\employees.csv"
+
+# with open(employees_path) as file:
+#     reader_obj = csv.reader(file)
+#     next(reader_obj)
+#     names = []
+#     for line in reader_obj:
+#         names.append(line[0])
+#     print(names)
 
 
+# with open(employees_path) as file:
+#     reader_obj = csv.DictReader(file)
+#     names = []
+#     for data in reader_obj:
+#         names.append(data['name'])
+#     print(names)
 
+
+###############################################################################
+
+# group the male and female employees
+
+with open(employees_path) as file:
+    reader_obj = csv.reader(file)
+    next(reader_obj)
+    male_employees, female_employees = [], []
+    for line in reader_obj:
+        if line[1] == 'male':
+            male_employees.append(line[0])
+        else:
+            female_employees.append(line[0])
+    print(f"Male Employees : {male_employees}")
+    print(f"Female Employees : {female_employees}")
+
+with open(employees_path) as file:
+    reader_obj = csv.DictReader(file)
+    male_employees, female_employees = [], []
+    for data in reader_obj:
+        if data['gender'] == "male":
+            male_employees.append(data['name'])
+        else:
+            female_employees.append(data['name'])
+    print(f"Male Employees : {male_employees}")
+    print(f"Female Employees : {female_employees}")
+
+
+##################################################################################
+
+# print the names of employees who earn more than 80000
+
+with open(employees_path) as file:
+    reader_obj = csv.reader(file)
+    next(reader_obj)
+    for line in reader_obj:
+        if int(line[3]) >= 80000:
+            print(line[0])
+
+with open(employees_path) as file:
+    reader_obj = csv.reader(file)
+    next(reader_obj)
+    names = [line[0] for line in reader_obj if int(line[3]) >= 80000]
+    print(names)
+
+
+with open(employees_path) as file:
+    reader_obj = csv.DictReader(file)
+    for data in reader_obj:
+        if int(data['pay']) >= 80000:
+            print(data['name'])
+
+
+# print the names of employees earning the highest and least pay
+
+with open(employees_path) as file:
+    reader_obj = csv.reader(file)
+    next(reader_obj)
+    by_pay = sorted(reader_obj, key=lambda item: int(item[3]))
+    least, *rest, highest = by_pay
+    print(least, highest)
+
+# DictReader
