@@ -96,8 +96,112 @@ The above program can handle only TypeError but not SyntaxError
 #
 # add()
 
+# multiple exception blocks
+
+# def div():
+#     try:
+#         a = eval(input())
+#         b = eval(input())
+#         print(a / b)
+#     except TypeError as message:
+#         print(message)
+#         print('TypeError handled')
+#     except ZeroDivisionError as message:
+#         print(message)
+#         print('Zero Division Error Handled')
+#         div()
+#     except SyntaxError:
+#         print('Syntax Error Handled')
+#
+# div()
+
+# try:
+#     with open('exception.txt', 'x') as file:
+#         file.write("Good morning all")
+# except FileExistsError:
+#     with open('exception.txt', 'a') as file:
+#         file.write("Good morning all")
 
 
+#################################################################################
 
+# 2) Generic Exception Handling
+"""
+-> It can handle all types of errors except Keyboard Interruption
+-> Syntax:
+            try:
+                problem statement
+            except Exception/ BaseException as message:
+                solution
+"""
+
+# def div():
+#     try:
+#         a = eval(input())
+#         b = eval(input())
+#         print(a / b)
+#     except Exception as msg:
+#         print(msg)
+#         print('Error Handled')
+#
+# div()
+
+# l = [10, 20, 30, 40]
+# l.remove(11)
+
+# try:
+#     l = [10, 20, 30, 40]
+#     l.remove(11)
+# except BaseException as msg:
+#     print(msg)
+#     print('Error Handled')
+
+# try:
+#     while True:
+#         print('Hello All')
+# except Exception:
+#     print('Error Handled')
+
+################################################################################
+
+# 3) Default Exception
+"""
+-> Default Exception handles all kinds of exceptions including keyboard interruption
+-> Syntax:
+        try:
+            Problem Statement
+        except:
+            Solution
+"""
+
+# try:
+#     while True:
+#         print('Hello All')
+# except:
+#     print('Exception Handled')
+
+# try:
+#     print(10 / 0)
+# except:
+#     print('Error Handled')
+
+# multiple exception blocks
+
+# try:
+#     # print(10 + 'a')
+#     # print(name)
+#     # print(20 / 0)
+#     while True:
+#         print('Hello')
+# except TypeError as msg:
+#     print(msg)
+#     print('type error handled')
+# except NameError as msg:
+#     print(msg)
+# except Exception as msg:
+#     print(msg)
+#     print('Generic Exception Handled')
+# except:
+#     print('Default Exception Handled')
 
 
