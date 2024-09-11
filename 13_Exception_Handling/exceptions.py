@@ -204,4 +204,74 @@ The above program can handle only TypeError but not SyntaxError
 # except:
 #     print('Default Exception Handled')
 
+#################################################################################
+
+# raise Exceptions as per requirement
+
+# try:
+#     actual_password = '1234'
+#     entered_password = input('Enter the password : ')
+#     if actual_password == entered_password:
+#         print('Phone Unlocked')
+#     elif entered_password.isdigit() == False:
+#         raise TypeError ("Password must contain only digits")
+#     elif len(entered_password) != len(actual_password):
+#         raise ValueError ("Password must contain exactly 4 digits")
+#     else:
+#         raise ValueError ("Incorrect Password")
+# except ValueError as message:
+#     print(message)
+# except TypeError as message:
+#     print(message)
+
+###############################################################################
+
+# Custom Exception
+
+# class PhoneLocked(Exception):
+#     pass
+#
+# for i in range(3):
+#     try:
+#         actual_password = '1234'
+#         entered_password = input('Enter the password : ')
+#         if actual_password == entered_password:
+#             print('Phone Unlocked')
+#             break
+#         elif entered_password.isdigit() == False:
+#             raise TypeError("Password must contain only digits")
+#         elif len(entered_password) != len(actual_password):
+#             raise ValueError("Password must contain exactly 4 digits")
+#         else:
+#             raise ValueError("Incorrect Password")
+#     except ValueError as message:
+#         print(message)
+#     except TypeError as message:
+#         print(message)
+# else:
+#     raise PhoneLocked ("No of attempts exceeded")
+
+#################################################################################
+
+try:
+    a = eval(input())
+    b = eval(input())
+    print(a + b)
+except TypeError:
+    print('TypeError Handled')
+except Exception:
+    print('Generic Exception Handled')
+except:
+    print('Default Exception Handled')
+else:
+    print("In else block")
+finally:
+    print('In finally block')
+
+"""
+else - when there are no exceptions, else block will get executed
+finally - gets executed if even if there is an error or no error
+Order -> 
+        try -> specific -> generic -> default -> else -> finally
+"""
 
