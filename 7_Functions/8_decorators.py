@@ -331,6 +331,35 @@ def sam(*args, **kwargs):
     return args, kwargs
 
 
-print(sam(1, 2, 3))
-print(sam(1, 2, a=10, b=20))
+# print(sam(1, 2, 3))
+# print(sam(1, 2, a=10, b=20))
 
+################################################################################
+
+# decorator to count the number of function calls for each function
+
+def func_call_count(func):
+    count = 0
+    def wrapper(*args, **kwargs):
+        nonlocal count
+        count += 1
+        result = func(*args, **kwargs)
+        print(f"{func.__name__} has been called {count} times")
+        return result
+    return wrapper
+
+@func_call_count
+def spam():
+    return "Hello World"
+
+print(spam())
+print(spam())
+
+@func_call_count
+def display():
+    return "In display"
+
+
+print(display())
+print(display())
+print(display())
