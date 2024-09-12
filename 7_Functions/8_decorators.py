@@ -348,6 +348,17 @@ def func_call_count(func):
         return result
     return wrapper
 
+d = {}
+def func_call_count(func):
+    d[func.__name__] = 0
+    def wrapper(*args, **kwargs):
+        d[func.__name__] += 1
+        result = func(*args, **kwargs)
+        print(d)
+        return result
+    return wrapper
+
+
 @func_call_count
 def spam():
     return "Hello World"
@@ -360,6 +371,32 @@ def display():
     return "In display"
 
 
+print(display())
+print(display())
+print(display())
+
+
+# limit the function calls to 3
+
+def limit_func_calls(func):
+    count = 0
+    def wrapper(*args, **kwargs):
+        nonlocal count
+        count += 1
+        if count <= 3:
+            result = func(*args, **kwargs)
+            print(f"{func.__name__} has been called {count} times")
+            return result
+        else:
+            raise Exception ("Can not call the function more than 3 times")
+    return wrapper
+
+@limit_func_calls
+def display():
+    return "In display"
+
+
+print(display())
 print(display())
 print(display())
 print(display())
