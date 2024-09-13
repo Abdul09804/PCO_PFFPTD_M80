@@ -133,7 +133,50 @@ print(re.findall(r"\s", "Hello WelCoMe to PytHon ClAsS"))       # [' ', ' ', ' '
 
 print(len(re.findall(r"\s", "Hello WelCoMe to PytHon ClAsS")))      # 4
 
+###############################################################################
 
+# meta characters
+# '+' -> matches 1 or more times
 
+# match any digit from 0 to 9 as long as it matches
+print(re.findall(r"[0-9]+", "The cost of 10 gram gold is 72345"))   # ['10', '72345']
 
+# match one or more occurrences of character n between a and b
+print(re.findall(r"an+b", "annnbanbnnannnnnnnnnbabnnnnnannnnnnnnnnbannb"))      # ['annnb', 'anb', 'annnnnnnnnb', 'annnnnnnnnnb', 'annb']
+
+# match all lowercase characters as long as it matches
+print(re.findall(r"[a-z]+", "Hello WelCoMe to PytHon ClAsS"))       # ['ello', 'el', 'o', 'e', 'to', 'yt', 'on', 'l', 's']
+print(re.findall(r"[A-Za-z]+", "Hello WelCoMe to PytHon ClAsS"))        # ['Hello', 'WelCoMe', 'to', 'PytHon', 'ClAsS']
+
+# find the sum of numbers in the string
+st = "1s65kl4sf678jsl345knkl34jk1111"
+# o/p1 = 1 + 6 + 5 + 4 + 6 + 7 + 8 + 3 + 4 + 5 + 3 + 4 + 1 + 1 + 1 + 1
+# o/p2 = 1 + 65 + 4 + 678 + 345 + 34 + 1111
+
+nums1 = re.findall(r"[0-9]", st)
+nums2 = re.findall(r"[0-9]+", st)
+# print(nums1, nums2)
+s1, s2 = 0, 0
+for num in nums1:
+    s1 += int(num)
+
+for num in nums2:
+    s2 += int(num)
+
+print(s1)   # 60
+print(s2)   # 2238
+
+# Meta character '?'
+
+# July or Jul
+print(re.findall(r"July?", "20 July 2020 20 Jul 2024"))     # ['July', 'Jul']
+
+# Negation '^'
+print(re.findall(r"[^0-9]", "The cost of 10 gram gold is 72345"))
+
+print(re.findall(r"[^a-z]", "The cost of 10 gram gold is 72345"))
+
+# count the number of special characters
+
+print(re.findall(r"[^A-Za-z0-9]", "as#$jkf987&*%*_ +="))
 
