@@ -75,3 +75,65 @@ Ex: 'abcda'
 re.findall(expression, string) -> returns a list of all the matches
 """
 
+print(re.findall("the", "the theory of relativity"))    # ['the', 'the']
+
+print(re.findall("cat", "the fragging belly indicates your cat is too fat"))    # ['cat', 'cat']
+
+print(re.findall("python", "python is a programming  language"))    # ['python']
+
+print(re.findall("aeiou", "hello how are you"))     # []
+
+print(re.findall(r"[aeiouAEIOU]", "Hello How are you"))     # ['e', 'o', 'o', 'a', 'e', 'o', 'u']
+
+
+# match smith and Smith
+
+print(re.findall(r"smith", "SilverSmith and Goldsmith"))    # ['smith']
+
+print(re.findall(r"Smith", "SilverSmith and Goldsmith"))    # ['Smith']
+
+print(re.findall(r"[sSmith]", "SilverSmith and Goldsmith"))     # ['S', 'i', 'S', 'm', 'i', 't', 'h', 's', 'm', 'i', 't', 'h']
+
+print(re.findall(r"[sS]mith", "SilverSmith and Goldsmith"))     # ['Smith', 'smith']
+
+
+# match seperate or separate
+print(re.findall(r"sep[ae]rate", "separate and seperate"))      # ['separate', 'seperate']
+
+# match gray or grey
+print(re.findall(r"gr[ea]y", "grey and gray"))      # ['grey', 'gray']
+
+# count vowels in a string
+st = "python programming"
+print(re.findall(r"[aeiou]", st))       # ['o', 'o', 'a', 'i']
+print(len(re.findall(r"[aeiou]", st)))  # 4
+print(''.join(re.findall(r"[aeiou]", st)))      # ooai
+
+# match any number between 0 to 9
+print(re.findall(r"[0123456789]", "The cost of 10 gram gold is 72345"))     # ['1', '0', '7', '2', '3', '4', '5']
+print(re.findall(r"[0-9]", "The cost of 10 gram gold is 72345"))
+
+# match html tags -> <h1>, <h2>, ............, <h6>
+print(re.findall(r"<h[1-6]>", "<h1> <h2> <h3> <h4> <h5> <h6>"))     # ['<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>']
+
+# match all lowercase characters
+print(re.findall(r"[a-z]", "Hello WelCoMe to PytHon ClAsS"))
+
+# match all uppercase characters
+print(re.findall(r"[A-Z]", "Hello WelCoMe to PytHon ClAsS"))
+
+# match both uc and lc
+print(re.findall(r"[A-Za-z]", "Hello WelCoMe to PytHon ClAsS"))
+
+# count the total number of alphabets
+print(len(re.findall(r"[A-Za-z]", "Hello WelCoMe to PytHon ClAsS")))        # 25
+
+# count the total number of white spaces
+print(re.findall(r"\s", "Hello WelCoMe to PytHon ClAsS"))       # [' ', ' ', ' ', ' ']
+
+print(len(re.findall(r"\s", "Hello WelCoMe to PytHon ClAsS")))      # 4
+
+
+
+
+
