@@ -180,3 +180,21 @@ print(re.findall(r"[^a-z]", "The cost of 10 gram gold is 72345"))
 
 print(re.findall(r"[^A-Za-z0-9]", "as#$jkf987&*%*_ +="))
 
+####################################################################################
+
+# word boundary (\b)
+
+print(re.findall(r"day", "what a beautiful day today is, I had a daydream"))    # ['day', 'day', 'day']
+
+print(re.findall(r"\bday", "what a beautiful day today is, I had a daydream"))  # ['day', 'day']
+
+print(re.findall(r"day\b", "what a beautiful day today is, I had a daydream"))  # ['day', 'day']
+
+print(re.findall(r"\bday\b", "what a beautiful day today is, I had a daydream"))    # ['day']
+
+
+# match the words starting with 'p'
+
+sentence = 'prakriti is learning python from pyspiders'
+print(re.findall(r"\bp[a-zA-Z]+", sentence))    # ['prakriti', 'python', 'pyspiders']
+
