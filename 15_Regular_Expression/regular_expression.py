@@ -221,5 +221,55 @@ print(re.findall(r"\b[a-z]+\b", sentence))      # ['is', 'learning', 'python', '
 words = "abhi Aradhya Vivek rahul uday"
 print(re.findall(r"\b[aeiouAEIOU][a-zA-Z]+", words))    # ['abhi', 'Aradhya', 'uday']
 
+# count the number of spaces in sample.log
+sample_log_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_M80\10_File_Handling\sample.log"
+
+with open(sample_log_path) as file:
+    white_spaces = 0
+    for line in file:
+        white_spaces += len(re.findall(r"\s", line))
+    print(white_spaces)
+
+# count the number of capital letter words in sample.log
+with open(sample_log_path) as file:
+    count = 0
+    for line in file:
+        count += len(re.findall(r"\b[A-Z]+\b", line))
+    print(count)
+
+
+# count the number of capital letters in sample.log -> r"[A-Z]"
+# count the number of 'INFO', 'TRACE', 'WARNING', 'EVENT' messages
+# {'INFO': 147, 'TRACE': 119, 'WARNING': 4, 'EVENT': 13}
+
+with open(sample_log_path) as file:
+    data = file.read()
+    print(len(re.findall(r"EVENT", data)))
+
+
+# count the number of words in sample.log
+
+with open(sample_log_path) as file:
+    count = 0
+    for line in file:
+        count += len(re.findall(r"\b[A-Za-z0-9]+", line))
+    print(count)
+
+###############################################################################
+
+# match all the digits
+sentence = "The cost of 1 kilogram of mango is 90 and that of orange is 67"
+print(re.findall(r"\d", sentence))      # ['1', '9', '0', '6', '7']
+
+# match the numbers
+print(re.findall(r"\d+", sentence))     # ['1', '90', '67']
+
+#  match exactly 2 digit number
+
+nums = '64 358 3 9875 45 76'
+print(re.findall(r"\b\d{2}\b", nums))       # ['64', '45', '76']
+
+# match 2 or 3 digit number
+print(re.findall(r"\b\d{2,3}\b", nums))     # ['64', '358', '45', '76']
 
 
