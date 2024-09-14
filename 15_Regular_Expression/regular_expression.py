@@ -198,3 +198,28 @@ print(re.findall(r"\bday\b", "what a beautiful day today is, I had a daydream"))
 sentence = 'prakriti is learning python from pyspiders'
 print(re.findall(r"\bp[a-zA-Z]+", sentence))    # ['prakriti', 'python', 'pyspiders']
 
+# match the words starting with P or p
+sentence = 'Prakriti is learning python from PySpiders'
+print(re.findall(r"\b[pP][a-zA-Z]+", sentence))     # ['Prakriti', 'python', 'PySpiders']
+
+print(re.findall(r"(?:p|P)[a-zA-Z]+", sentence))    # ['Prakriti', 'python', 'PySpiders']
+
+# expression to match names ending with a or i
+
+names = "hari krishna kavya abhishek ram nandini"
+
+print(re.findall(r"[a-zA-Z]+[ai]\b", names))    # ['hari', 'krishna', 'kavya', 'nandini']
+
+# expression to match the words starting with capital letter
+sentence = 'Prakriti is learning python from PySpiders sPoon'
+print(re.findall(r"\b[A-Z][A-Za-z]+", sentence))    # ['Prakriti', 'PySpiders']
+
+# expression to match words with lowercase characters only
+print(re.findall(r"\b[a-z]+\b", sentence))      # ['is', 'learning', 'python', 'from']
+
+# expression to match words starting with vowel only
+words = "abhi Aradhya Vivek rahul uday"
+print(re.findall(r"\b[aeiouAEIOU][a-zA-Z]+", words))    # ['abhi', 'Aradhya', 'uday']
+
+
+
