@@ -272,4 +272,21 @@ print(re.findall(r"\b\d{2}\b", nums))       # ['64', '45', '76']
 # match 2 or 3 digit number
 print(re.findall(r"\b\d{2,3}\b", nums))     # ['64', '358', '45', '76']
 
+###############################################################################
+
+# match phone number pattern - 9876543210 7889654321
+print(re.findall(r"\b[6-9][0-9]{9}\b", "9876543210 1234567890 2345678901 6789012345987"))
+
+# match ip address -> 197.234.4.34
+print(re.findall(r"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b", "198.23.333.8 1234.98.98.234 19.86.8.2 198.48.89989.8"))
+
+# match university numbers - 1PI13CS087     -> region code (1st number) has to be either 1, 2, 3 or 4
+
+expression = r"\b[1-4][A-Z]{2}\d{2}[A-Z]{2}\d{1,3}\b"
+st = "1PI13EC036 1PI13CS736"
+
+print(re.findall(expression, st))
+
+# match pan card number -> COIPB0809E
+
 
