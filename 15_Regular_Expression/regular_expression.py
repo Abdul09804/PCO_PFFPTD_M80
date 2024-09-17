@@ -288,5 +288,61 @@ st = "1PI13EC036 1PI13CS736"
 print(re.findall(expression, st))
 
 # match pan card number -> COIPB0809E
+st = "COIPB0809E ABCDE09888Y  COIPB8789"
+print(re.findall(r"\b[A-Z]{5}\d{4}[A-Z]", st))  # ['COIPB0809E']
+
+# expression to match 3 letter word in a given sentence
+sentence = "Hai Eve, how are you doing"
+print(re.findall(r"\b[a-zA-Z]{3}\b", sentence))
+
+# meta character '*' -> match 0 or more expressions
+
+# match words starting with he
+sentence = 'if he does not help the poor, he will go to hell'
+print(re.findall(r"\bhe[A-Za-z]*", sentence))   # ['he', 'help', 'he', 'hell']
+
+# escaping a meta character
+# count the number of ?
+sentence = "hello there? how are you? how is life? what are you doing?"
+print(len(re.findall(r"\?", sentence)))     # 4
+
+# count the number of +
+# count the number of *
+
+# match puython or java
+print(re.findall(r"(python|java)", "python and java are programming languages"))    # ['python', 'java']
+
+# match the words starting with he or se
+sentence = "she sells sea shells in the seashore, he helps the community and he is the hero"
+print(re.findall(r"\b(?:he|se)[a-zA-Z]*\b", sentence))      # ['he', 'sells', 'sea', 'hells', 'he', 'seashore', 'he', 'helps', 'he', 'he', 'he', 'hero']
+
+# expression to match email
+
+emails = """
+test.user@gmail.com
+test.user2@gmail.com
+test2.user@gmail.com
+testuser@company.in
+testuser2@company.com
+"""
+
+"""
+com, in, edu, gov, org
+(?:com|in|edu|org|gov)
+
+gmail, company
+[a-z]+
+
+tester, test2, 2tester
+[a-z0-9]+
+
+\.
+
+"""
+
+email_pattern = r"[a-z0-9]+.?[a-z0-9]*@[a-z]+.?(?:com|in|gov|org|edu)"
+print(re.findall(email_pattern, emails))
+
+
 
 
